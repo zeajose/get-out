@@ -1,2 +1,28 @@
-<h1>Posts#show</h1>
-<p>Find me in app/views/posts/show.html.erb</p>
+<!--       @post = Post.find(params[:id])
+ -->
+
+
+<div class="user-photo">
+  <%= @post.photo %>
+</div>
+
+
+
+<div class="info-box">
+<h1>Description: </h1>
+<p>@post.description</p>
+</div>
+
+<div class="user-box">
+<!-- include avatar, contact link, upload date... LATER -->
+<h1> Meet <%= @user.first_name %> </h1>
+</div>
+
+
+<div class="card-display">
+  <h1>Other items from user:</h1>
+  <!-- iterate over user.post here to display 5 or so other posts.... -->
+</div>
+
+<!--
+<div class="booking table"> a display box here for possible integration w/ booking view (so bookings can be previed on this page w/o redirect) </div> -->

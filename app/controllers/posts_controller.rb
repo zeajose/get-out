@@ -1,11 +1,8 @@
 class PostsController < ApplicationController
+
+ #work on this
   def index
-  end
-
-  def show
-  end
-
-  def destroy
+    @posts = Post.all
   end
 
   def new
@@ -32,6 +29,19 @@ class PostsController < ApplicationController
   def update
   end
 
+#work on this
+  def destroy
+    @post = Post.find(params[:id])
+    @post.delete
+  end
+
+ #work on this
+  def show
+    @post = Post.find(params[:id])
+    @user = @post.user
+  end
+
   def edit
   end
+
 end
