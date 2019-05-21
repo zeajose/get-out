@@ -17,7 +17,7 @@
           <% @post.photos.each do |photo| %>
             <div class="carousel-item <%= "active" if @post.photos.first == photo %>">
 
-              <img src="<%= photo.source.url %>" class="d-block w-100" style="background-size: cover; background-position: center;">
+              <img src="<%= photo.source.url %>" class="d-block h-100" style="background-size: cover; background-position: center; max-height: 500px;">
 
             </div>
           <% end %>
@@ -35,8 +35,7 @@
 
       <div class="card-trip-infos">
         <div>
-          <%= link_to "Book now", new_post_booking_path(@post), class: "btn btn-light border button-main"%>
-          <h2>  </h2>
+          <%= link_to "Update", edit_post_path(@post), class: "btn btn-light border button-main"%>
 
         </div>
         <h2 class="card-trip-pricing"> $ <%= @post.price  %></h2>
@@ -46,11 +45,22 @@
 
     <div class="col-4 p-4 " style="background-color: white">
       <h2> $<%= @post.price %> per day </h2>
-      <p> Posted by: Jose </p>
+      <p> <b> <%= @user.first_name.capitalize %></b> </p>
       <p> Address: <%= @post.address %> </p>
       <p>Description: <%= @post.description %></p>
+
+      <!-- categories option -->
+
       <p><b>Categories</b></p>
       <p class="btn btn-outline-warning"> <%= @post.category %></p>
+      <br>
+
+      <!-- This is the calendar code -->
+      <%= simple_form_for [@post, @booking] do |f| %>
+      <%= f.input :start_date, html5: true %>
+      <%= f.input :end_date, html5: true %>
+      <%= f.submit "request", class: "btn btn-warning" %>
+      <% end %>
 
     </div>
 
