@@ -41,7 +41,7 @@ post3 = Post.new(title: 'hiking pole', price: '5', category: 'hiking equipment',
 post3.user = jose
 post3.address = jose.address
 post3.save
-Photo.create(post: post3, remote_source_url: 'https://www.rei.com/media/product/110806')
+Photo.create(post: post3, remote_source_url: 'https://images-na.ssl-images-amazon.com/images/I/61V7UTWRMTL._SX425_.jpg')
 
 
 post4 = Post.new(title: 'nice tent for up to 3 people', price: '90', category: 'camping equipment', description: 'a tent bag for two people, very nice')
