@@ -62,9 +62,20 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
 
-
 def search
-
+@category = Post.where({ category: params[:q] })
 end
 
 end
+
+
+
+
+
+
+
+
+
+
+
+
