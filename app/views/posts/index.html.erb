@@ -6,8 +6,10 @@
 
 <h1>Featured items: </h1>
 
+ <% featured_list = @posts.last(5) %>
+
 <div class="card-container">
-  <% @posts.each do |item| %>
+  <% featured_list.each do |item| %>
     <div class="featured-card">
       <img src=<%= item.photos[0].source %> >
       <div class="">
@@ -19,3 +21,9 @@
 </div>
 
 
+
+
+
+<footer>
+
+</footer>
