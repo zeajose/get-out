@@ -18,14 +18,7 @@
   <br>
   <% end %>
 
-  <h2>You have the following requests to rent you items</h2>
-  <% @posts.each do |post| %>
-    <% post.bookings.each do |booking| %>
-      <p> <%= booking.start_date %> </p>
 
-    <% end %>
-
-  <% end %>
 
 </div>
 

@@ -5,7 +5,7 @@ class Booking < ApplicationRecord
   validates :post, presence: true
   validates_presence_of :start_date, :end_date
   validate :end_date_is_after_start_date
-  validate :start_date_is_before_date_today
+  validate :start_date_is_same_or_later_than_date_today
 
   private
 
@@ -17,7 +17,7 @@ class Booking < ApplicationRecord
     end
   end
 
-  def start_date_is_before_date_today
+  def start_date_is_same_or_later_than_date_today
     return if end_date.blank? || start_date.blank?
 
     if start_date < Time.now.to_date
