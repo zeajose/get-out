@@ -1,1 +1,12 @@
 // Specific CSS for your home-page
+a {
+  color: black
+}
+
+a:hover {
+  text-decoration: none;
+  color: black;
+  opacity: 0.85;
+  transition: 0.5s;
+}
+
