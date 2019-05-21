@@ -11,6 +11,8 @@ class BookingsController < ApplicationController
   end
 
   def create
+    # Find the post using the params
+    @post = Post.find(params['post_id'])
     # Creates a booking object with the params from the form
     # Also requires and permits (see private method below)
     @booking = Booking.new(booking_params)
@@ -19,18 +21,18 @@ class BookingsController < ApplicationController
     # assigns the current user as the user of the booking
     @booking.user = current_user
 
-    # ASSIGN THE PRICE
-    @booking.price = 250
-
-    # Find the post using the params
-    @post = Post.find(params['post_id'])
+    # ASSIGN THE PRICE (Number of days time the price specified in post)
+    @booking.price = (@booking.end_date - @booking.start_date).to_i * @post.price.to_i
 
     # Assign the post to the booking
+    @booking.post = @post
 
-    raise
+    if @booking.save
+      redirect_to booking_path(@booking)
+    else
+      render :new
+    end
 
-
-    # add if validation if @booking.save
   end
 
   def edit
