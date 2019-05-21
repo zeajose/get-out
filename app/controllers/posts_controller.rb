@@ -64,6 +64,5 @@ class PostsController < ApplicationController
 
   def search
     @category = Post.where({ category: params[:q]})
-    raise
   end
 end
