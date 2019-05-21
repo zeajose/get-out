@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index]
+
 
  #work on this
   def index
@@ -53,11 +55,27 @@ class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
     @user = @post.user
+    @booking = Booking.new
   end
 
   def edit
     @post = Post.find(params[:id])
   end
 
+def search
+@category = Post.where({ category: params[:q] })
+end
 
 end
+
+
+
+
+
+
+
+
+
+
+
+
