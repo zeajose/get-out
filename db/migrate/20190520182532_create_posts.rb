@@ -5,6 +5,7 @@ class CreatePosts < ActiveRecord::Migration[5.2]
       t.string :address
       t.string :price
       t.string :title
+      t.string :category
       t.references :user, foreign_key: true
 
       t.timestamps
