@@ -35,7 +35,11 @@ class BookingsController < ApplicationController
     else
       render :new
     end
+  end
 
+  def show
+    # Find the booking using the params
+    @booking = Booking.find(params['id'])
   end
 
   def edit

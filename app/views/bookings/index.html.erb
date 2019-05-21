@@ -4,46 +4,66 @@
 <div class="container">
 
   <h1>Hi <%= current_user.first_name.capitalize %></h1>
-  <p>Please find all your upcoming bookings below:</p>
 
-
-  <div class="cards">
-    <% @bookings.each do |booking| %>
-      <% if booking.status == 'confirmed' %>
-        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-        <%= booking.post.title %>
-        <%= booking.price %>
-        <%= booking.start_date %>
-        <%= booking.end_date %>
-        </div>
-      <% end %>
-    <% end %>
-  </div>
-
-  <br>
-  <br>
-  <br>
-
-  <% if  %>
-
-    <% end %>
-    <p>Please find all your upcoming bookings below:</p>
+    <% if @bookings.where(status: 'confirmed').length > 0 %>
+    <p>Please find all your confirmed bookings below:</p>
+    <% confirmed_bookings = @bookings.where(status: 'confirmed') %>
     <div class="cards">
-      <% @bookings.each do |booking| %>
-        <% if booking.status == 'requested' %>
-          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-          <%= booking.post.title %>
-          <%= booking.price %>
-          <%= booking.start_date %>
-          <%= booking.end_date %>
-          </div>
-        <% end %>
+      <% confirmed_bookings.each do |booking| %>
+        <%= render 'shared/booking_card', booking: booking %>
       <% end %>
     </div>
+  <% end %>
+
+  <% if @bookings.where(status: 'requested').length > 0 %>
+    <br>
+    <p>Please find all your requested bookings below:</p>
+    <% requested_bookings = @bookings.where(status: 'requested') %>
+    <div class="cards">
+      <% requested_bookings.each do |booking| %>
+       <%= render 'shared/booking_card', booking: booking %>
+      <% end %>
+    </div>
+  <% end %>
+
+  <% if @bookings.where(status: 'completed').length > 0 %>
+    <br>
+    <p>Please find all your completed bookings below:</p>
+    <% completed_bookings = @bookings.where(status: 'completed') %>
+    <div class="cards">
+      <% completed_bookings.each do |booking| %>
+        <%= render 'shared/booking_card', booking: booking %>
+      <% end %>
+    </div>
+  <% end %>
+
+  <% if @bookings.where(status: 'rejected').length > 0 %>
+    <br>
+    <p>Please find all your rejected bookings below:</p>
+    <% rejected_bookings = @bookings.where(status: 'rejected') %>
+    <div class="cards">
+      <% confirmed_bookings.each do |booking| %>
+       <%= render 'shared/booking_card', booking: booking %>
+      <% end %>
+    </div>
+  <% end %>
+
+  <% if @bookings.where(status: 'cancelled').length > 0 %>
+    <br>
+    <p>Please find all your cancelled bookings below:</p>
+    <% cancelled_bookings = @bookings.where(status: 'cancelled') %>
+    <div class="cards">
+      <% confirmed_bookings.each do |booking| %>
+        <%= render 'shared/booking_card', booking: booking %>
+      <% end %>
+    </div>
+  <% end %>
+
+
+
 
 
 </div>
-
 
 
 
