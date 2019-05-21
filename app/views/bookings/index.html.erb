@@ -11,6 +11,7 @@
     <div class="cards">
       <% confirmed_bookings.each do |booking| %>
         <%= render 'shared/booking_card', booking: booking %>
+        <% raise %>
       <% end %>
     </div>
   <% end %>
