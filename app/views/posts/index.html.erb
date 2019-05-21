@@ -1,31 +1,38 @@
-<h1>Montreal outdoor sports good rental service</h1>
+<div class="banner-home" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://source.unsplash.com/uY2UIyO5o5c/1600x900);">
+  <div class="container">
+    <h1>Montreal <strong>outdoor sports</strong>!</h1>
+    <p>Bikes, cars, drones, anything you want.</p>
 
-<div class="search-box">
-<!-- empty for now -->
+    <!-- Search box -->
+    <div class="searchbox" style="background-color: white">
+
+    <%= form_tag(search_posts_path, method: "get") do %>
+      <%= text_field_tag(:q) %>
+      <%= submit_tag("Search") %>
+    <% end %>
+
+    </div>
+    <!--  -->
+  </div>
 </div>
 
 
-<%= form_tag(posts_path) do %>
-  <%= text_field_tag :term %>
-  <%= submit_tag 'Search' %>
-<% end %>
+<div class="container">
+  <h5>Featured items: </h5>
 
+   <% featured_list = @posts.last(5) %>
 
-
-<h1>Featured items: </h1>
-
- <% featured_list = @posts.last(5) %>
-
-<div class="card-container">
-  <% featured_list.each do |item| %>
-    <div class="featured-card">
-      <img src=<%= item.photos[0].source %> >
-      <div class="">
-        <p> <%= item.title %> </p>
-        <p> from $<%= item.price %> a day <p>
+  <div class="card-container">
+    <% featured_list.each do |item| %>
+      <div class="featured-card">
+        <img src=<%= item.photos[0].source %> >
+        <div class="">
+          <p> <%= item.title %> </p>
+          <p> from $<%= item.price %> a day <p>
+        </div>
       </div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>
 
 
