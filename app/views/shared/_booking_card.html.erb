@@ -1,0 +1,24 @@
+<!-- <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%# = booking.post.photos[0].source %>)">
+  <%= booking.post.title %>
+  <br>
+  Price <%= booking.price %> CAD
+  <br>
+  Pickup date: <%= booking.start_date %>
+  <br>
+  Return date: <%= booking.end_date %>
+</div>
+ -->
+
+
+ <div class="card-trip">
+  <img src="<%= booking.post.photos[0].source %>">
+  <div class="card-trip-infos">
+    <div>
+      <h2><%= booking.post.title.capitalize %></h2>
+      <p> <%= booking.post.description.capitalize %></p>
+      <p> Pickup: Return: </p>
+    </div>
+    <h2 class="card-trip-pricing"><%= booking.price %> CAD </h2>
+    <img src='https://kitt.lewagon.com/placeholder/users/gfmar' class="card-trip-user avatar-bordered"/>
+  </div>
+</div>
