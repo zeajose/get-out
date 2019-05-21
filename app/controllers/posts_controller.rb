@@ -61,4 +61,9 @@ class PostsController < ApplicationController
   def edit
     @post = Post.find(params[:id])
   end
+
+  def search
+    @category = Post.where({ category: params[:q]})
+    raise
+  end
 end

@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
 
+  get 'search', to: 'posts#search', as: :search_posts
 
   resources :bookings, except: [:new, :create, :destroy]
 
