@@ -1,15 +1,8 @@
 Rails.application.routes.draw do
-  get 'posts/index'
-  get 'posts/new'
-  get 'posts/create'
-  get 'posts/update'
-  get 'posts/destroy'
-  get 'posts/show'
-  get 'posts/edit'
   devise_for :users
 
   root to: 'pages#home'
-  resources :bookings, except: [:new, :create]
+  resources :bookings, except: [:new, :create, :destroy]
 
   resources :posts do
     resources :photos, only: [:new, :create, :destroy]
