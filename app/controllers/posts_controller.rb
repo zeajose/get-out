@@ -58,4 +58,9 @@ class PostsController < ApplicationController
   def edit
     @post = Post.find(params[:id])
   end
+
+#add method for seach box
+
+
+
 end
