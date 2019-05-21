@@ -9,7 +9,7 @@
         <p> <strong>Pickup:</strong> <%= booking.start_date %> <strong>Return:</strong> <%= booking.end_date %></p>
       </div>
       <h2 class="card-trip-pricing"><%= booking.price %> CAD </h2>
-      <img src='https://kitt.lewagon.com/placeholder/users/gfmar' class="card-trip-user avatar-bordered"/>
+      <img src="<%= booking.post.user.photo %>" class="card-trip-user avatar-bordered"/>
     </div>
   </div>
 <% end %>

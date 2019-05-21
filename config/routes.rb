@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   resources :bookings, except: [:new, :create, :destroy]
 
+
   resources :posts do
     resources :photos, only: [:new, :create, :destroy]
     resources :bookings, only: [:new, :create]

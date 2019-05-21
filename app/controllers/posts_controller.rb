@@ -66,3 +66,15 @@ class PostsController < ApplicationController
     @category = Post.where({ category: params[:q]})
   end
 end
+
+
+
+
+
+
+
+
+
+
+
+

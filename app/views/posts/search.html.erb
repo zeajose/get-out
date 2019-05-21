@@ -2,7 +2,7 @@
   <h1>Search Results: </h1>
     <% @category.each do |item| %>
       <div class="featured-card">
-        <img src=<%= item.photos[0].source %> >
+        <img src= <%= item.photos[0].source %> >
         <div class="">
           <p> <%= item.title %> </p>
           <p> from $<%= item.price %> a day <p>

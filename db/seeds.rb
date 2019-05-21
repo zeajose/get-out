@@ -14,10 +14,10 @@ User.destroy_all
 
 puts 'Creating users...'
 
-joe = User.create(first_name: 'joe', email: 'joe@email.com', password: '123456', address: 'westside')
-thomas = User.create(first_name: 'thomas', email: 'thomas@email.com', password: '123456', address: 'victoria')
-jose = User.create(first_name: 'jose', email: 'jose@email.com', password: '123456', address: 'downtown')
-gustaf = User.create(first_name: 'gustaf', email: 'gustaf@email.com', password: '123456', address: 'la gare')
+joe = User.create(first_name: 'joe', email: 'joe@email.com', password: '123456', address: 'westside', remote_photo_url: "https://kitt.lewagon.com/placeholder/users/jdilillo")
+thomas = User.create(first_name: 'thomas', email: 'thomas@email.com', password: '123456', address: 'victoria', remote_photo_url: "https://kitt.lewagon.com/placeholder/users/tomkf")
+jose = User.create(first_name: 'jose', email: 'jose@email.com', password: '123456', address: 'downtown', remote_photo_url: "https://kitt.lewagon.com/placeholder/users/zeajose")
+gustaf = User.create(first_name: 'gustaf', email: 'gustaf@email.com', password: '123456', address: 'la gare', remote_photo_url: "https://kitt.lewagon.com/placeholder/users/gfmar")
 
 
 puts 'Creating posts and photos....'
