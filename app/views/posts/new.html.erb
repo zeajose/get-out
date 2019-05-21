@@ -1,2 +1,29 @@
-<h1>Posts#new</h1>
-<p>Find me in app/views/posts/new.html.erb</p>
+<div class="container aligner" height="100vh">
+  <div class="form-card border rounded p-4 mt-5">
+    <h1>New Posts:</h1>
+
+    <%= simple_form_for @post do |f| %>
+      <% if @post.errors.any? %>
+        <div class="errors-container">
+          <ul>
+            <% @post.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <!-- [...] all the fields -->
+      <%= f.input :name %>
+      <%= f.input :description %>
+      <%= f.input :price %>
+      <%= f.input :cocktail_description %>
+
+      <%= f.input :photo %>
+      <%= f.input :photo_cache, as: :hidden %>
+      <%= f.submit 'Add post', class: "btn btn-light border button-main" %>
+
+    <% end %> <br>
+    <%= link_to "Back to the list", cocktails_path(@post) %>
+  </div>
+</div>
