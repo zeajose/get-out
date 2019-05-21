@@ -6,15 +6,17 @@
 
 <h1>Featured items: </h1>
 
-<div class="card-display">
 
-   <% @posts.each do |item| %>
-<div class="card">
-<img src=<%= item.photos[0].source %> >
 
- <%= item.title %>
- <p> from <%= item.price %> a day <p>
+<div class="container">
+
+  <% @posts.each do |item| %>
+  <div>
+    <img src=<%= item.photos[0].source %> >
+    <p> <%= item.title %> </p>
+      <p> from <%= item.price %> a day <p>
   </div>
+  <br>
   <% end %>
 
 </div>
