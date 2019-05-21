@@ -6,7 +6,7 @@
   <h1>Hi <%= current_user.first_name.capitalize %></h1>
 
     <% if @bookings.where(status: 'confirmed').length > 0 %>
-    <p>Please find all your confirmed bookings below:</p>
+    <h5>Please find all your confirmed bookings below:</h5>
     <% confirmed_bookings = @bookings.where(status: 'confirmed') %>
     <div class="cards">
       <% confirmed_bookings.each do |booking| %>
