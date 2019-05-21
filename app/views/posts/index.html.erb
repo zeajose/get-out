@@ -1,2 +1,24 @@
-<h1>Posts#index</h1>
-<p>Find me in app/views/posts/index.html.erb</p>
+<h1>Montreal outdoor sports good rental service</h1>
+
+
+<div class="search-box">
+<!-- empty for now -->
+</div>
+
+
+
+
+<h1>Featured items: </h1>
+
+
+<div class="card-display">
+
+   <% @posts.each do |item| %>
+<div class="card">
+<img src=<% item.photos%> >
+ <%= item.title %>
+ <p> from <%= item.price %> a day <p>
+  </div>
+
+ <% end %>
+</div>
