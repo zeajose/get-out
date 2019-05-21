@@ -36,7 +36,6 @@ post2.save
 Photo.create(post: post2, remote_source_url: 'https://www.decathlon.co.uk/media/838/8387867/big_1134237.jpg')
 
 
-
 post3 = Post.new(title: 'hiking pole', price: '5', category: 'hiking equipment', description: 'a nice stick')
 post3.user = jose
 post3.address = jose.address
@@ -49,5 +48,20 @@ post4.user = gustaf
 post4.address = gustaf.address
 post4.save
 Photo.create(post: post4, remote_source_url: 'https://s7d2.scene7.com/is/image/academy/20191398')
+
+puts 'Creating some fake bookings...'
+
+Booking.create(user: joe, post: post1, start_date: '2019-05-30', end_date: '2019-06-01', price: '1337', status: 'completed')
+Booking.create(user: joe, post: post2, start_date: '2019-05-30', end_date: '2019-06-01', price: '1337', status: 'requested')
+
+Booking.create(user: thomas, post: post1, start_date: '2019-05-30', end_date: '2019-06-01', price: '1337', status: 'completed')
+Booking.create(user: thomas, post: post2, start_date: '2019-05-30', end_date: '2019-06-01', price: '1337', status: 'requested')
+
+Booking.create(user: jose, post: post1, start_date: '2019-05-30', end_date: '2019-06-01', price: '1337', status: 'completed')
+Booking.create(user: jose, post: post2, start_date: '2019-05-30', end_date: '2019-06-01', price: '1337', status: 'requested')
+
+Booking.create(user: gustaf, post: post1, start_date: '2019-05-30', end_date: '2019-06-01', price: '1337', status: 'completed')
+Booking.create(user: gustaf, post: post2, start_date: '2019-05-30', end_date: '2019-06-01', price: '1337', status: 'requested')
+
 
 puts 'Finished!'

@@ -6,17 +6,24 @@
 
 <h1>Featured items: </h1>
 
+ <% featured_list = @posts.last(5) %>
 
-
-<div class="container">
-
-  <% @posts.each do |item| %>
-  <div>
-    <img src=<%= item.photos[0].source %> >
-    <p> <%= item.title %> </p>
-      <p> from <%= item.price %> a day <p>
-  </div>
-  <br>
+<div class="card-container">
+  <% featured_list.each do |item| %>
+    <div class="featured-card">
+      <img src=<%= item.photos[0].source %> >
+      <div class="">
+        <p> <%= item.title %> </p>
+        <p> from $<%= item.price %> a day <p>
+      </div>
+    </div>
   <% end %>
-
 </div>
+
+
+
+
+
+<footer>
+
+</footer>
