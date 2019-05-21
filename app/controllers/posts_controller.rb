@@ -59,8 +59,9 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
 
-#add method for seach box
 
+def search
 
+end
 
 end
