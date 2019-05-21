@@ -1,5 +1,7 @@
 class BookingsController < ApplicationController
+
   def index
+    @bookings = Booking.where("user_id = #{current_user.id}")
   end
 
   def new
@@ -28,7 +30,7 @@ class BookingsController < ApplicationController
     @booking.post = @post
 
     if @booking.save
-      redirect_to booking_path(@booking)
+      redirect_to bookings_path
     else
       render :new
     end

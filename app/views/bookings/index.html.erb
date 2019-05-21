@@ -1,2 +1,23 @@
-<h1>Bookings#index</h1>
-<p>Find me in app/views/bookings/index.html.erb</p>
+
+
+
+<div class="container">
+
+  <h1>Hi <%= current_user.first_name.capitalize %></h1>
+  <p>Please find all your bookings below</p>
+
+
+  <% @bookings.each do |booking| %>
+  <div>
+    Title of post <%= booking.post.title %>
+    Start date <%= booking.start_date %>
+    End date <%= booking.end_date %>
+    Price <%= booking.price %>
+  </div>
+  <br>
+  <% end %>
+
+
+</div>
+
+
