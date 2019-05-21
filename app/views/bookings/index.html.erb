@@ -4,22 +4,46 @@
 <div class="container">
 
   <h1>Hi <%= current_user.first_name.capitalize %></h1>
-  <p>Please find all your bookings below</p>
+  <p>Please find all your upcoming bookings below:</p>
 
 
-  <% @bookings.each do |booking| %>
-  <div>
-    Title of post <%= booking.post.title %>
-    Start date <%= booking.start_date %>
-    End date <%= booking.end_date %>
-    Price <%= booking.price %>
-    Status: <%= booking.status %>
+  <div class="cards">
+    <% @bookings.each do |booking| %>
+      <% if booking.status == 'confirmed' %>
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+        <%= booking.post.title %>
+        <%= booking.price %>
+        <%= booking.start_date %>
+        <%= booking.end_date %>
+        </div>
+      <% end %>
+    <% end %>
   </div>
-  <br>
-  <% end %>
 
+  <br>
+  <br>
+  <br>
+
+  <% if  %>
+
+    <% end %>
+    <p>Please find all your upcoming bookings below:</p>
+    <div class="cards">
+      <% @bookings.each do |booking| %>
+        <% if booking.status == 'requested' %>
+          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+          <%= booking.post.title %>
+          <%= booking.price %>
+          <%= booking.start_date %>
+          <%= booking.end_date %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
 
 
 </div>
+
+
 
 
