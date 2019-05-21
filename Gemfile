@@ -1,6 +1,17 @@
 source 'https://rubygems.org'
 ruby '2.5.3'
 
+# Photo gems ------------
+
+# Gems for cloudinary
+gem 'dotenv-rails', groups: [:development, :test]
+gem 'cloudinary', '~> 1.9.1'
+
+# Carrier wave
+gem 'carrierwave', '~> 1.2'
+
+# -----------------------
+
 gem 'bootsnap', require: false
 gem 'devise'
 gem 'jbuilder', '~> 2.0'

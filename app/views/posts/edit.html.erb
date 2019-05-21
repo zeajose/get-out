@@ -1,2 +1,33 @@
-<h1>Posts#edit</h1>
-<p>Find me in app/views/posts/edit.html.erb</p>
+<div class="container aligner" height="100vh">
+  <div class="form-card border rounded p-4 mt-5">
+    <h1>Edit Post:</h1>
+
+    <%= simple_form_for @post do |f| %>
+      <% if @post.errors.any? %>
+        <div class="errors-container">
+          <ul>
+            <% @post.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <!-- [...] all the fields -->
+      <%= f.input :title %>
+      <%= f.input :description %>
+      <%= f.input :address %>
+      <%= f.input :price %>
+      <%= f.input :category %>
+
+      <%= f.simple_fields_for :photos do |p| %>
+        <%= p.input :source %>
+        <%= p.input :source_cache, as: :hidden %>
+      <% end %>
+
+      <%= f.submit 'Save changes', class: "btn btn-light border button-main" %>
+    <% end %>
+
+    <%= link_to "Cancel", root_path%>
+  </div>
+</div>
