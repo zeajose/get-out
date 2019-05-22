@@ -86,7 +86,7 @@
         <% else %>
           <i class="far fa-times-circle" style="color: grey">
         <% end %>
-      </i> Returned <br><span style="color: grey; font-size: 12px"> Return date: <%= @booking.start_date %> </span></li>
+      </i> Returned <br><span style="color: grey; font-size: 12px"> Return date: <%= @booking.end_date %> </span></li>
 
       <li class="list-group-item">
         <% if @booking.status == 'completed' ||
