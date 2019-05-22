@@ -13,10 +13,10 @@ User.destroy_all
 
 puts 'Creating users...'
 
-joe = User.create(first_name: 'joe', email: 'joe@email.com', password: '123456', address: '2880 Nulla St. Mankato Mississippi', remote_photo_url: "https://kitt.lewagon.com/placeholder/users/jdilillo")
-thomas = User.create(first_name: 'thomas', email: 'thomas@email.com', password: '123456', address: '8562 Fusce Frederick Nebraska', remote_photo_url: "https://kitt.lewagon.com/placeholder/users/tomkf")
-jose = User.create(first_name: 'jose', email: 'jose@email.com', password: '123456', address: '103 Integer Rd. Corona New Mexico', remote_photo_url: "https://kitt.lewagon.com/placeholder/users/zeajose")
-gustaf = User.create(first_name: 'gustaf', email: 'gustaf@email.com', password: '123456', address: '7292 Dictum Av San Antonio MI 47096', remote_photo_url: "https://kitt.lewagon.com/placeholder/users/gfmar")
+joe = User.create(first_name: 'joe', email: 'joe@email.com', password: '123456', address: '950 Notre-Dame ouest, montreal', remote_photo_url: "https://kitt.lewagon.com/placeholder/users/jdilillo")
+thomas = User.create(first_name: 'thomas', email: 'thomas@email.com', password: '123456', address: '400 rue de l´inspecteur montreal', remote_photo_url: "https://kitt.lewagon.com/placeholder/users/tomkf")
+jose = User.create(first_name: 'jose', email: 'jose@email.com', password: '123456', address: '9073 d´aillon, montreal', remote_photo_url: "https://kitt.lewagon.com/placeholder/users/zeajose")
+gustaf = User.create(first_name: 'gustaf', email: 'gustaf@email.com', password: '123456', address: '8776 barbeau, montreal', remote_photo_url: "https://kitt.lewagon.com/placeholder/users/gfmar")
 
 
 puts 'Creating posts and photos....'
@@ -31,11 +31,13 @@ post1.save
 Photo.create(post: post1, remote_source_url: 'https://www.montane.co.uk/images/montane-minimus-sleeping-bag-p28-13130_image.jpg')
 Photo.create(post: post1, remote_source_url: 'https://i5.walmartimages.com/asr/f1be8694-c319-4d2f-ba19-05e22348d14e_1.1e4d0faa82e3957d4c51e84bf0c2eea3.jpeg?odnHeight=450&odnWidth=450&odnBg=FFFFFF')
 
+
 post2 = Post.new(title: 'superb kayak', price: '50', category: 'outdoor equipment', description: 'two seater, 10 foot kayak. Made in Sweden.')
 post2.user = thomas
 post2.address = thomas.address
 post2.save
 Photo.create(post: post2, remote_source_url: 'https://www.decathlon.co.uk/media/838/8387867/big_1134237.jpg')
+
 
 
 post3 = Post.new(title: 'hiking pole', price: '5', category: 'outdoor equipment', description: 'a nice stick for our daily hikes')
@@ -45,11 +47,13 @@ post3.save
 Photo.create(post: post3, remote_source_url: 'https://images-na.ssl-images-amazon.com/images/I/61V7UTWRMTL._SX425_.jpg')
 
 
+
 post4 = Post.new(title: 'nice tent for up to 3 people', price: '90', category: 'outdoor living', description: 'a tent big enough for two people, very nice')
 post4.user = gustaf
 post4.address = gustaf.address
 post4.save
 Photo.create(post: post4, remote_source_url: 'https://s7d2.scene7.com/is/image/academy/20191398')
+
 
 post5 = Post.new(title: 'Hydro Flask 18 oz', price: '2', category: 'camping gear', description: 'a great flask that will keep the content cool or hot for ever')
 post5.user = joe
@@ -57,17 +61,20 @@ post5.address = joe.address
 post5.save
 Photo.create(post: post5, remote_source_url: 'https://images-na.ssl-images-amazon.com/images/I/71QB6mO5oeL._SL1500_.jpg')
 
+
 post6 = Post.new(title: 'portable camping chair', price: '5', category: 'camping gear', description: 'lightweight chair for any adventure')
 post6.user = thomas
 post6.address = thomas.address
 post6.save
 Photo.create(post: post6, remote_source_url: 'https://images-na.ssl-images-amazon.com/images/I/911i1ky7GzL._SL1500_.jpg')
 
+
 post7 = Post.new(title: 'hammock', price: '9', category: 'camping gear', description: 'super nice portalble hammock for your camping trips')
 post7.user = jose
 post7.address = jose.address
 post7.save
 Photo.create(post: post7, remote_source_url: 'https://images-na.ssl-images-amazon.com/images/I/61T7uO3x3ML.jpg')
+
 
 
 post8 = Post.new(title: 'super bright flashlight', price: '90', category: 'camping gear', description: 'a LED flashlight, super bright and water resistant')
