@@ -1,8 +1,6 @@
 class PostsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index]
 
- # work on this
- # Updating Controller for MapBox
   def index
     @posts = Post.all
     @posts = Post.where.not(latitude: nil, longitude: nil)
@@ -55,13 +53,11 @@ class PostsController < ApplicationController
     end
   end
 
-  # work on this
   def destroy
     @post = Post.find(params[:id])
     @post.delete
   end
 
-  # work on this
   def show
     @post = Post.find(params[:id])
     @user = @post.user
@@ -76,15 +72,6 @@ class PostsController < ApplicationController
     @category = Post.where({ category: params[:q]})
   end
 end
-
-
-
-
-
-
-
-
-
 
 
 
