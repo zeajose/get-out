@@ -1,6 +1,6 @@
 <%= render 'shared/navbar_home' %>
-<h1>Search Results: </h1>
   <div class="container mt-3">
+  <h1>Search Results: </h1>
   <div class="cards">
     <% @category.each do |item| %>
         <%= link_to post_path(item.id) do %>
