@@ -74,8 +74,6 @@ class PostsController < ApplicationController
     @category = Post.where({ category: params[:q]})
     @search_query = params[:q]
 
-
-
      @markers = @category.map do |post|
       {
         lat: post.latitude,
@@ -83,8 +81,7 @@ class PostsController < ApplicationController
         infoWindow: render_to_string(partial: "infowindow", locals: { post: post }),
         image_url: helpers.asset_url('pin.png')
       }
-    end
-
+      end
   end
 end
 
