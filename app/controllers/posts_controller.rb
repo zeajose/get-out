@@ -1,8 +1,6 @@
 class PostsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index]
 
-
- #work on this
   def index
     @posts = Post.all
   end
@@ -45,13 +43,11 @@ class PostsController < ApplicationController
     end
   end
 
-  # work on this
   def destroy
     @post = Post.find(params[:id])
     @post.delete
   end
 
-  # work on this
   def show
     @post = Post.find(params[:id])
     @user = @post.user
