@@ -1,10 +1,18 @@
 class PostsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index]
 
-
- #work on this
+ # work on this
+ # Updating Controller for MapBox
   def index
     @posts = Post.all
+    @posts = Post.where.not(latitude: nil, longitude: nil)
+
+    @markers = @posts.map do |post|
+      {
+        lat: post.latitude,
+        lng: post.longitude
+      }
+    end
   end
 
   def new
