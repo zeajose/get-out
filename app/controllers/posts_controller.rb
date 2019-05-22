@@ -3,7 +3,7 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all
-    @featured_list = @posts.last(6)
+    @featured_list = @posts.last(5)
   end
 
   def new
