@@ -10,7 +10,9 @@ class PostsController < ApplicationController
     @markers = @posts.map do |post|
       {
         lat: post.latitude,
-        lng: post.longitude
+        lng: post.longitude,
+        infoWindow: render_to_string(partial: "infowindow", locals: { post: post }),
+        image_url: helpers.asset_url('pin.png')
       }
     end
   end
