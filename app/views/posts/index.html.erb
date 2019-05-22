@@ -21,14 +21,16 @@
 
 
 
-<!--   <h5>Featured items: </h5>
- -->
-  <div class="card-container">
-    <% @featured_list.each do |post| %>
-    <%= link_to post_path(post.id) do %>
-    <%= render 'shared/feature_card', post: post %>
-    <% end %>
-    <% end %>
+  <h5>Featured items: </h5>
+
+  <div class="container mt-3">
+    <div class="cards">
+      <% @featured_list.each do |post| %>
+        <%= link_to post_path(post.id) do %>
+        <%= render 'shared/feature_card', post: post %>
+        <% end %>
+      <% end %>
+    </div>
   </div>
 
 
