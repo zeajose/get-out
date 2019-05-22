@@ -2,8 +2,8 @@ class PostsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index]
 
   def index
-    @posts = Post.all
     @posts = Post.where.not(latitude: nil, longitude: nil)
+    @posts = Post.all
 
     @markers = @posts.map do |post|
       {
@@ -72,6 +72,16 @@ class PostsController < ApplicationController
 
   def search
     @category = Post.where({ category: params[:q]})
+    @search_query = params[:q]
+
+     @markers = @category.map do |post|
+      {
+        lat: post.latitude,
+        lng: post.longitude,
+        infoWindow: render_to_string(partial: "infowindow", locals: { post: post }),
+        image_url: helpers.asset_url('pin.png')
+      }
+      end
   end
 end
 
