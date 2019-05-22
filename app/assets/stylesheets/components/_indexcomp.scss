@@ -4,10 +4,6 @@ h5{
 }
 
 
-.height-300 {
-height: 300px;
-      width: 205px;
-}
 
 .card-container {
   display: flex;
@@ -20,23 +16,5 @@ height: 300px;
     width: 204px;
     height: 171px;
   }
-  }
-}
-
-.index-footer {
-  margin-top: 80px;
-  padding: 50px 400px;
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-start;
-  background-color: rgb(44, 203, 187);
-  h3{
-    font-weight: bold;
-        font-size: 16px;
-    font-family: Mabry-Black, Helvetica, Arial;
-  }
-  h4{
-    font-size: 16px;
-    font-family: Mabry-Medium, Helvetica, Arial;
   }
 }

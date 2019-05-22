@@ -1,0 +1,27 @@
+.footer {
+  margin-top: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #839d9a;
+  h3{
+    font-weight: bold;
+    font-size: 16px;
+    font-family: Mabry-Black, Helvetica, Arial;
+  }
+  h4{
+    font-size: 16px;
+    font-family: Mabry-Medium, Helvetica, Arial;
+  }
+}
+
+.footer-elements-flex-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-icon {
+  height: 40px;
+  width: 40px;
+}

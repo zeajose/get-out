@@ -23,36 +23,15 @@
 
   <h5>Featured items: </h5>
 
-  <div class="card-container">
-    <% @featured_list.each do |post| %>
-    <%= link_to post_path(post.id) do %>
-    <%= render 'shared/feature_card', post: post %>
-    <% end %>
-    <% end %>
+  <div class="container mt-3">
+    <div class="cards">
+      <% @featured_list.each do |post| %>
+        <%= link_to post_path(post.id) do %>
+        <%= render 'shared/feature_card', post: post %>
+        <% end %>
+      <% end %>
+    </div>
   </div>
 
 
-
-<footer class="index-footer">
-
-<div>
-   <h3>About</h3>
-  <h4>About us</h4>
-  <h4>Terms of service</h4>
-  <h4>FAQ</h4>
-</div>
-
-
-  <div>
-    <h3>Account</h3>
-    <h4>My items</h4>
-    <h4>Sign out</h4>
-  </div>
-
-
-  <div><h3>Follow us</h3></div>
-
-</footer>
-
-
-
+<%= render 'shared/footer' %>
