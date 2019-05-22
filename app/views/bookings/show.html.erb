@@ -34,7 +34,15 @@
   </div>
 </div>
 
-<div class="d-flex flex-row-reverse container mt-3">
+<div class="d-flex flex-row container mt-3">
+  <div
+  id="map"
+  style="width: 100%;
+  height: 600px;"
+  data-markers="<%= @markers.to_json %>"
+  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+></div>
+
 
   <div class="card" style="width: 18rem;">
     <div class="card-header">

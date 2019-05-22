@@ -22,7 +22,7 @@
       <%= f.input :category %>
 
       <%= f.simple_fields_for :photos do |p| %>
-        <%= p.input :source %>
+        <%= p.input :source, required: true %>
         <%= p.input :source_cache, as: :hidden %>
       <% end %>
 

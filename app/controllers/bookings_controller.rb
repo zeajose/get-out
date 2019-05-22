@@ -42,12 +42,12 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params['id'])
     @post = @booking.post
     @markers =
-      {
+      [{
         lat: @post.latitude,
         lng: @post.longitude,
         infoWindow: render_to_string(partial: "infowindow", locals: { post: @post }),
         image_url: helpers.asset_url('pin.png')
-      }
+      }]
   end
 
   def edit
