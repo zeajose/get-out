@@ -21,9 +21,9 @@
 
 
 
-  <h5>Featured items: </h5>
 
   <div class="container mt-3">
+  <h4>Featured items: </h4>
     <div class="cards">
       <% @featured_list.each do |post| %>
         <%= link_to post_path(post.id) do %>
