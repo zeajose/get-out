@@ -19,25 +19,17 @@
 </div>
 
 
-<div class="container">
+
+
   <h5>Featured items: </h5>
 
-   <% featured_list = @posts.last(5) %>
-
   <div class="card-container">
-    <% featured_list.each do |item| %>
-    <%= link_to post_path(item.id) do %>
-      <div class="featured-card">
-        <img src=<%= item.photos[0].source %> >
-        <div class="">
-          <p> <%= item.title %> </p>
-          <p> from $<%= item.price %> a day <p>
-        </div>
-      </div>
+    <% @featured_list.each do |post| %>
+    <%= link_to post_path(post.id) do %>
+    <%= render 'shared/feature_card', post: post %>
     <% end %>
     <% end %>
   </div>
-</div>
+
 
 <%= render 'shared/footer' %>
-

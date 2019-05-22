@@ -24,5 +24,4 @@ class Booking < ApplicationRecord
       errors.add(:start_date, "cannot be in the past")
     end
   end
-
 end
