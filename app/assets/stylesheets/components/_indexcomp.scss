@@ -1,13 +1,16 @@
 .card-container {
   display: flex;
   justify-content: center;
-}
-
-.featured-card {
+  height: 260px;
+  padding-top: 20px;
+  a{
   margin: 0px 34px;
-  img {
+      width: 205px;
+      height: 250px;
+  .display-img {
     width: 204px;
     height: 171px;
+  }
   }
 }
 
