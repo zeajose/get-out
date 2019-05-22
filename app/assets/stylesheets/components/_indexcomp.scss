@@ -1,13 +1,19 @@
+.height-300 {
+height: 300px;
+      width: 205px;
+}
+
 .card-container {
   display: flex;
   justify-content: center;
-}
-
-.featured-card {
-  margin: 0px 34px;
-  img {
+  padding-top: 20px;
+  flex-wrap: wrap;
+  a{
+  margin: 10px 18px;
+  .display-img {
     width: 204px;
     height: 171px;
+  }
   }
 }
 
