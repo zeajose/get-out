@@ -1,15 +1,8 @@
-<%= render 'shared/navbar' %>
-<div class="container">
-  <h1>Search Results: </h1>
+<h1>Search Results: </h1>
+  <div class="card-container">
     <% @category.each do |item| %>
         <%= link_to post_path(item.id) do %>
-        <div class="featured-card">
-        <img src= <%= item.photos[0].source %> >
-        <div class="">
-          <p> <%= item.title %> </p>
-          <p> from $<%= item.price %> a day <p>
-        </div>
-      </div>
+    <%= render 'shared/feature_card', post: item %>
     <% end %>
-    <% end %>
+        <% end %>
 </div>

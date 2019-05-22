@@ -19,7 +19,7 @@
       <%= f.input :description %>
       <%= f.input :address %>
       <%= f.input :price, as: :integer %>
-      <%= f.input :category %>
+      <%= f.input :category, collection: ['camping gear', 'sleeping bags', 'knifes and tools', 'outdoor living', 'outdoor equipment' ]%>
 
       <%= f.simple_fields_for :photos do |p| %>
         <%= p.input :source, required: true %>

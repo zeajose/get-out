@@ -13,6 +13,8 @@ class PostsController < ApplicationController
         image_url: helpers.asset_url('pin.png')
       }
     end
+    @featured_list = @posts.last(5)
+
   end
 
   def new
