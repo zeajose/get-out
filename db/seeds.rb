@@ -51,17 +51,37 @@ Photo.create(post: post4, remote_source_url: 'https://s7d2.scene7.com/is/image/a
 
 puts 'Creating some fake bookings...'
 
-Booking.create(user: joe, post: post1, start_date: '2019-05-30', end_date: '2019-06-01', price: '1337', status: 'completed')
-Booking.create(user: joe, post: post2, start_date: '2019-05-30', end_date: '2019-06-01', price: '1337', status: 'requested')
+Booking.create(user: joe, post: post1, start_date: '2019-05-30', end_date: '2019-06-01', price: '1337', status: 'requested')
+Booking.create(user: joe, post: post2, start_date: '2019-05-30', end_date: '2019-07-01', price: '17', status: 'confirmed')
+Booking.create(user: joe, post: post3, start_date: '2019-05-30', end_date: '2019-09-21', price: '12312', status: 'payed')
+Booking.create(user: joe, post: post4, start_date: '2019-05-30', end_date: '2019-06-01', price: '120', status: 'picked_up')
+Booking.create(user: joe, post: post1, start_date: '2019-05-30', end_date: '2019-08-11', price: '27', status: 'returned')
+Booking.create(user: joe, post: post2, start_date: '2019-05-30', end_date: '2019-06-23', price: '37', status: 'rejected')
+Booking.create(user: joe, post: post2, start_date: '2019-05-30', end_date: '2019-06-23', price: '37', status: 'completed')
 
-Booking.create(user: thomas, post: post1, start_date: '2019-05-30', end_date: '2019-06-01', price: '1337', status: 'completed')
-Booking.create(user: thomas, post: post2, start_date: '2019-05-30', end_date: '2019-06-01', price: '1337', status: 'requested')
+Booking.create(user: thomas, post: post1, start_date: '2019-05-30', end_date: '2019-06-01', price: '1337', status: 'requested')
+Booking.create(user: thomas, post: post2, start_date: '2019-05-30', end_date: '2019-07-01', price: '17', status: 'confirmed')
+Booking.create(user: thomas, post: post3, start_date: '2019-05-30', end_date: '2019-09-21', price: '12312', status: 'payed')
+Booking.create(user: thomas, post: post4, start_date: '2019-05-30', end_date: '2019-06-01', price: '120', status: 'picked_up')
+Booking.create(user: thomas, post: post1, start_date: '2019-05-30', end_date: '2019-08-11', price: '27', status: 'returned')
+Booking.create(user: thomas, post: post2, start_date: '2019-05-30', end_date: '2019-06-23', price: '37', status: 'rejected')
+Booking.create(user: thomas, post: post2, start_date: '2019-05-30', end_date: '2019-06-23', price: '37', status: 'completed')
 
-Booking.create(user: jose, post: post1, start_date: '2019-05-30', end_date: '2019-06-01', price: '1337', status: 'completed')
-Booking.create(user: jose, post: post2, start_date: '2019-05-30', end_date: '2019-06-01', price: '1337', status: 'requested')
+Booking.create(user: jose, post: post1, start_date: '2019-05-30', end_date: '2019-06-01', price: '1337', status: 'requested')
+Booking.create(user: jose, post: post2, start_date: '2019-05-30', end_date: '2019-07-01', price: '17', status: 'confirmed')
+Booking.create(user: jose, post: post3, start_date: '2019-05-30', end_date: '2019-09-21', price: '12312', status: 'payed')
+Booking.create(user: jose, post: post4, start_date: '2019-05-30', end_date: '2019-06-01', price: '120', status: 'picked_up')
+Booking.create(user: jose, post: post1, start_date: '2019-05-30', end_date: '2019-08-11', price: '27', status: 'returned')
+Booking.create(user: jose, post: post2, start_date: '2019-05-30', end_date: '2019-06-23', price: '37', status: 'rejected')
+Booking.create(user: jose, post: post2, start_date: '2019-05-30', end_date: '2019-06-23', price: '37', status: 'completed')
 
-Booking.create(user: gustaf, post: post1, start_date: '2019-05-30', end_date: '2019-06-01', price: '1337', status: 'completed')
-Booking.create(user: gustaf, post: post2, start_date: '2019-05-30', end_date: '2019-06-01', price: '1337', status: 'requested')
+Booking.create(user: gustaf, post: post1, start_date: '2019-05-30', end_date: '2019-06-01', price: '1337', status: 'requested')
+Booking.create(user: gustaf, post: post2, start_date: '2019-05-30', end_date: '2019-07-01', price: '17', status: 'confirmed')
+Booking.create(user: gustaf, post: post3, start_date: '2019-05-30', end_date: '2019-09-21', price: '12312', status: 'payed')
+Booking.create(user: gustaf, post: post4, start_date: '2019-05-30', end_date: '2019-06-01', price: '120', status: 'picked_up')
+Booking.create(user: gustaf, post: post1, start_date: '2019-05-30', end_date: '2019-08-11', price: '27', status: 'returned')
+Booking.create(user: gustaf, post: post2, start_date: '2019-05-30', end_date: '2019-06-23', price: '37', status: 'rejected')
+Booking.create(user: gustaf, post: post2, start_date: '2019-05-30', end_date: '2019-06-23', price: '37', status: 'completed')
 
 
 puts 'Finished!'
