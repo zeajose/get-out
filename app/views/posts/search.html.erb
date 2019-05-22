@@ -1,8 +1,20 @@
-<h1>Search Results: </h1>
-  <div class="card-container">
-    <% @category.each do |item| %>
-        <%= link_to post_path(item.id) do %>
-    <%= render 'shared/feature_card', post: item %>
+<%= render 'shared/navbar_search' %>
+<div class="main-container">
+
+  <div class="cards">
+    <% @category.each do |post| %>
+     <%#= link_to post_path(post.id) do %>
+        <div class="card" style="background-image: url(<%= post.photos.first.source.url %>);">
+          <%= post.title.capitalize %>
+      <%# end %>
+        </div>
     <% end %>
-        <% end %>
+  </div>
+    <div
+    id="map"
+    style="width: 100%;
+    height: 600px;"
+    data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+  ></div>
 </div>
