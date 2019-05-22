@@ -3,7 +3,18 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all
+    @posts = Post.where.not(latitude: nil, longitude: nil)
+
+    @markers = @posts.map do |post|
+      {
+        lat: post.latitude,
+        lng: post.longitude,
+        infoWindow: render_to_string(partial: "infowindow", locals: { post: post }),
+        image_url: helpers.asset_url('pin.png')
+      }
+    end
     @featured_list = @posts.last(5)
+
   end
 
   def new
