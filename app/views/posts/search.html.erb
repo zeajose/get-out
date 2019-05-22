@@ -1,5 +1,5 @@
-  <div class="card-container">
 <h1>Search Results: </h1>
+  <div class="card-container">
     <% @category.each do |item| %>
         <%= link_to post_path(item.id) do %>
     <%= render 'shared/feature_card', post: item %>

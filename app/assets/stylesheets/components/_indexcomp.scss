@@ -1,12 +1,15 @@
+.height-300 {
+height: 300px;
+      width: 205px;
+}
+
 .card-container {
   display: flex;
   justify-content: center;
-  height: 260px;
   padding-top: 20px;
+  flex-wrap: wrap;
   a{
-  margin: 0px 34px;
-      width: 205px;
-      height: 250px;
+  margin: 10px 34px;
   .display-img {
     width: 204px;
     height: 171px;

@@ -1,4 +1,4 @@
-<div class="card-trip">
+<div class="card-trip height-300">
     <img class="display-img" src="<%= post.photos[0].source %>">
     <div class="card-trip-infos">
       <div>
@@ -6,6 +6,6 @@
         <p> <%= post.description.capitalize %></p>
       </div>
       <h2 class="card-trip-pricing">From $<%= post.price %> CAD a day</h2>
-      <img src="<%= post.user.photo %>" class="card-trip-user avatar-bordered"/>
+      <img class="avatar" src="<%= post.user.photo %>" class="card-trip-user avatar-bordered"/>
     </div>
   </div>
