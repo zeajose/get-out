@@ -1,18 +1,17 @@
 <div class="banner-home" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://source.unsplash.com/uY2UIyO5o5c/1600x900);">
   <div class="container">
-    <h1>Montreal <strong>outdoor sports</strong>!</h1>
-    <p>Bikes, cars, drones, anything you want.</p>
+    <h1>Montreal <strong>Outdoor Sports</strong>!</h1>
+    <p>Bikes, cars, drones, rent anything you want.</p>
 
     <!-- Search box -->
-    <div class="searchbox" style="background-color: white">
-
-    <%= form_tag(search_posts_path, method: "get") do %>
-      <%= text_field_tag(:q) %>
-      <%= submit_tag("Search") %>
-    <% end %>
-
+    <div class="search__container">
+      <%= form_tag(search_posts_path, method: "get") do %>
+        <%= text_field_tag :q, "", class: "search__input", placeholder: "search"%>
+        <%#= submit_tag("Search") %>
+      <% end %>
     </div>
     <!--  -->
+
   </div>
 </div>
 
