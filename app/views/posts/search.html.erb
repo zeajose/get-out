@@ -3,12 +3,17 @@
 
   <div class="cards">
     <% @category.each do |post| %>
-     <%#= link_to post_path(post.id) do %>
         <div class="card" style="background-image: url(<%= post.photos.first.source.url %>);">
           <%= post.title.capitalize %>
-      <%# end %>
         </div>
     <% end %>
+
+<!--   <div class="container mt-3">
+  <h1>Search Results: </h1>
+  <div class="cards">
+    <% @category.each do |item| %> -->
+        <%#= link_to post_path(item.id) do %>
+    <%#= render 'shared/feature_card', post: item %>
   </div>
     <div
     id="map"
@@ -17,4 +22,5 @@
     data-markers="<%= @markers.to_json %>"
     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
   ></div>
+</div>
 </div>
