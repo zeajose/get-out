@@ -15,10 +15,13 @@
     <% if @booking.status == 'requested' %>
       <p> Your booking is still pending <%= @booking.post.user.first_name.capitalize %>'s approval</p>
 
-    <% elsif @booking.status == 'confirmed' %>
+    <% elsif @booking.status == 'confirmed' ||
+     @booking.status == 'payed' ||
+     @booking.status == 'picked_up' %>
       <p>Congratulations, your booking has been confirmed by <%= @booking.post.user.first_name.capitalize %></p>
 
-    <% elsif @booking.status == 'completed' %>
+    <% elsif @booking.status == 'completed' ||
+    @booking.status == 'returned'  %>
     <p> Details of your previous booking from <%= @booking.post.user.first_name.capitalize %></p>
 
     <% elsif @booking.status == 'rejected' %>
@@ -31,12 +34,112 @@
   </div>
 </div>
 
-<div
-  id="map"
-  style="width: 100%;
-  height: 600px;"
-  data-markers="<%= @markers.to_json %>"
-  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-></div>
+<div class="d-flex flex-row-reverse container mt-3">
+
+  <div class="card" style="width: 18rem;">
+    <div class="card-header">
+      Booking status
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">
+        <i class="far fa-check-circle" style="color:green">
+        </i> Requested</li>
 
 
+      <li class="list-group-item">
+        <% if @booking.status == 'confirmed' ||
+          @booking.status == 'payed' ||
+          @booking.status == 'picked_up' ||
+          @booking.status == 'returned' ||
+          @booking.status == 'completed' %>
+            <i class="far fa-check-circle" style="color: green">
+        <% elsif @booking.status == 'rejected' ||
+        @booking.status == 'cancelled' %>
+          <i class="far fa-times-circle" style="color: red">
+        <% else %>
+          <i class="far fa-times-circle" style="color: grey">
+        <% end %>
+        </i> Confirmed</li>
+
+      <li class="list-group-item">
+        <% if @booking.status == 'payed' ||
+          @booking.status == 'picked_up' ||
+          @booking.status == 'returned' ||
+          @booking.status == 'completed' %>
+            <i class="far fa-check-circle" style="color: green">
+        <% elsif @booking.status == 'confirmed' %>
+            <i class="far fa-times-circle" style="color: orange">
+        <% else %>
+          <i class="far fa-times-circle" style="color: grey">
+        <% end %>
+      </i> Payed <br><span style="color:grey; font-size: 12px"> Price: <%= @booking.price %> CAD </span></li>
+
+      <li class="list-group-item">
+        <% if @booking.status == 'picked_up' ||
+          @booking.status == 'returned' ||
+          @booking.status == 'completed' %>
+            <i class="far fa-check-circle" style="color: green">
+
+        <% else %>
+          <i class="far fa-times-circle" style="color: grey">
+        <% end %>
+      </i> Picked up  <br><span style="color:grey; font-size: 12px"> Pick up date: <%= @booking.start_date %> </span></li>
+
+      <li class="list-group-item">
+        <% if @booking.status == 'returned' ||
+          @booking.status == 'completed' %>
+            <i class="far fa-check-circle" style="color: green">
+
+        <% else %>
+          <i class="far fa-times-circle" style="color: grey">
+        <% end %>
+      </i> Returned <br><span style="color: grey; font-size: 12px"> Return date: <%= @booking.start_date %> </span></li>
+
+      <li class="list-group-item">
+        <% if @booking.status == 'completed' ||
+          @booking.status == 'returned' %>
+            <i class="far fa-check-circle" style="color: green">
+        <% else %>
+          <i class="far fa-times-circle" style="color: grey">
+        <% end %>
+      </i> Completed</li>
+
+
+
+
+    </ul>
+  </div>
+
+
+</div>
+
+
+
+
+
+<!--
+
+DETAILED STATUS
+-REQUESTED
+-CONFIRMED
+-PAYED
+-COLLECTED
+-RETURNED
+-COMPLETED
+
+
+Price
+
+Payment status
+
+Address
+
+Dates
+
+Duration
+
+
+
+
+
+-->
