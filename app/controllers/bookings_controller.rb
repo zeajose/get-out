@@ -31,7 +31,7 @@ class BookingsController < ApplicationController
     @booking.post = @post
 
     if @booking.save
-      redirect_to bookings_path
+      redirect_to booking_path(@booking)
     else
       render :new
     end

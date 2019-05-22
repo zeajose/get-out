@@ -3,7 +3,13 @@
 
 <div class="container mt-3">
 
-  <h1 class="mb-3">Hi <%= current_user.first_name.capitalize %>, here you'll find all your bookings</h1>
+  <% if current_user.first_name.nil? %>
+    <% name = current_user.email %>
+  <% else %>
+    <% name = current_user.first_name.capitalize %>
+  <% end %>
+
+  <h1 class="mb-3">Hi <%= name %>, here's all your bookings</h1>
 
     <% if @bookings.where(status: 'confirmed').length > 0 %>
     <p>Please find all your confirmed bookings below:</p>
