@@ -11,9 +11,9 @@
 
   <h1 class="mb-3">Hi <%= name %>, here's all your bookings</h1>
 
-    <% if @bookings.where(status: 'confirmed').length > 0 %>
-    <p>Please find all your confirmed bookings below:</p>
-    <% confirmed_bookings = @bookings.where(status: 'confirmed') %>
+    <% if @bookings.where({status: ['confirmed', 'payed', 'picked_up']}).length > 0 %>
+    <p>Please find all your active bookings below:</p>
+    <% confirmed_bookings = @bookings.where({status: ['confirmed', 'payed', 'picked_up']}) %>
     <div class="cards">
       <% confirmed_bookings.each do |booking| %>
         <%= render 'shared/booking_card', booking: booking %>
@@ -32,10 +32,10 @@
     </div>
   <% end %>
 
-  <% if @bookings.where(status: 'completed').length > 0 %>
+  <% if @bookings.where({status: ['completed', 'returned']}).length > 0 %>
     <br>
     <p>Please find all your completed bookings below:</p>
-    <% completed_bookings = @bookings.where(status: 'completed') %>
+    <% completed_bookings = @bookings.where({status: ['completed', 'returned']}) %>
     <div class="cards">
       <% completed_bookings.each do |booking| %>
         <%= render 'shared/booking_card', booking: booking %>
@@ -48,7 +48,7 @@
     <p>Please find all your rejected bookings below:</p>
     <% rejected_bookings = @bookings.where(status: 'rejected') %>
     <div class="cards">
-      <% confirmed_bookings.each do |booking| %>
+      <% rejected_bookings.each do |booking| %>
        <%= render 'shared/booking_card', booking: booking %>
       <% end %>
     </div>
