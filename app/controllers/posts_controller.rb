@@ -71,18 +71,31 @@ class PostsController < ApplicationController
   end
 
   def search
-    @category = Post.where({ category: params[:q]})
-    @search_query = params[:q]
+    if params[:q].present?
+      @result = Post.where({ category: params[:q]})
 
-     @markers = @category.map do |post|
-      {
-        lat: post.latitude,
-        lng: post.longitude,
-        infoWindow: render_to_string(partial: "infowindow", locals: { post: post }),
-        image_url: helpers.asset_url('pin.png')
-      }
+      @markers = @result.map do |post|
+        {
+          lat: post.latitude,
+          lng: post.longitude,
+          infoWindow: render_to_string(partial: "infowindow", locals: { post: post }),
+          image_url: helpers.asset_url('pin.png')
+        }
       end
+    else
+      @result = Post.all
+
+      @markers = @result.map do |post|
+        {
+          lat: post.latitude,
+          lng: post.longitude,
+          infoWindow: render_to_string(partial: "infowindow", locals: { post: post }),
+          image_url: helpers.asset_url('pin.png')
+        }
+      end
+    end
   end
+
 end
 
 

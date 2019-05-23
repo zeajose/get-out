@@ -2,10 +2,12 @@
 <div class="main-container">
 
   <div class="cards">
-    <% @category.each do |post| %>
-        <div class="card" style="background-image: url(<%= post.photos.first.source.url %>);">
-          <%= post.title.capitalize %>
-        </div>
+    <% @result.each do |post| %>
+      <%= link_to post_path(post.id), class: "card", style: "background-image: url(#{post.photos.first.source.url})", method: :get do%>
+        <!-- <div class="card" style="background-image: url(<%= post.photos.first.source.url %>);"> -->
+          <h4> <%= post.title.capitalize %> </h4>
+        <!-- </div> -->
+      <% end %>
     <% end %>
 
 <!--   <div class="container mt-3">
