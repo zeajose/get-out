@@ -27,15 +27,16 @@ puts 'Creating posts and photos....'
 post1 = Post.new(title: 'high-tech sleeping bag', price: '20', category: 'sleeping bags', description: 'a super high-tech sleeping bag for up two people')
 post1.user = joe
 post1.address = joe.address
-post1.photos.new(remote_source_url: 'https://www.montane.co.uk/images/montane-minimus-sleeping-bag-p28-13130_image.jpg')
-post1.photos.new(remote_source_url: 'https://i5.walmartimages.com/asr/f1be8694-c319-4d2f-ba19-05e22348d14e_1.1e4d0faa82e3957d4c51e84bf0c2eea3.jpeg?odnHeight=450&odnWidth=450&odnBg=FFFFFF')
+post1.photos.new(remote_source_url: 'https://source.unsplash.com/qelGaL2OLyE/1600x900')
+post1.photos.new(remote_source_url: 'https://source.unsplash.com/jkwbOfd3xJI/1600x900')
 post1.save!
 
 
 post2 = Post.new(title: 'superb kayak', price: '50', category: 'outdoor equipment', description: 'two seater, 10 foot kayak. Made in Sweden.')
 post2.user = thomas
 post2.address = thomas.address
-post2.photos.new(remote_source_url: 'https://www.decathlon.co.uk/media/838/8387867/big_1134237.jpg')
+post2.photos.new(remote_source_url: 'https://source.unsplash.com/ow4QxEMA_zc/1600x900')
+post2.photos.new(remote_source_url: 'https://source.unsplash.com/8wwwDJvehKk/1600x900')
 post2.save!
 
 
@@ -43,36 +44,41 @@ post2.save!
 post3 = Post.new(title: 'hiking pole', price: '5', category: 'outdoor equipment', description: 'a nice stick for our daily hikes')
 post3.user = jose
 post3.address = jose.address
-post3.photos.new(remote_source_url: 'https://images-na.ssl-images-amazon.com/images/I/61V7UTWRMTL._SX425_.jpg')
+post3.photos.new(remote_source_url: 'https://source.unsplash.com/-I-McziCxxM/1600x900')
+post3.photos.new(remote_source_url: 'https://source.unsplash.com/FoY_p4LoPSM/1600x900')
 post3.save!
 
 
-
+#
 post4 = Post.new(title: 'nice tent for up to 3 people', price: '90', category: 'outdoor living', description: 'a tent big enough for two people, very nice')
 post4.user = gustaf
 post4.address = gustaf.address
-post4.photos.new(remote_source_url: 'https://s7d2.scene7.com/is/image/academy/20191398')
+post4.photos.new(remote_source_url: 'https://source.unsplash.com/1o41Wy3Z3kc/1600x900')
+post4.photos.new(remote_source_url: 'https://source.unsplash.com/re2LZOB2XvY/1600x900')
 post4.save!
 
 
 post5 = Post.new(title: 'Hydro Flask 18 oz', price: '2', category: 'camping gear', description: 'a great flask that will keep the content cool or hot for ever')
 post5.user = joe
 post5.address = joe.address
-post5.photos.new(remote_source_url: 'https://images-na.ssl-images-amazon.com/images/I/71QB6mO5oeL._SL1500_.jpg')
+post5.photos.new(remote_source_url: 'https://www.hydroflask.com/media/catalog/product/2/0/20180530_hf_hydration_0985_14.jpg')
+post5.photos.new(remote_source_url: 'https://source.unsplash.com/1Uj1GF3AzJc/1600x900')
 post5.save!
 
 
 post6 = Post.new(title: 'portable camping chair', price: '5', category: 'camping gear', description: 'lightweight chair for any adventure')
 post6.user = thomas
 post6.address = thomas.address
-post6.photos.new(remote_source_url: 'https://images-na.ssl-images-amazon.com/images/I/911i1ky7GzL._SL1500_.jpg')
+post6.photos.new(remote_source_url: 'https://source.unsplash.com/vosixxYJhkU/1600x900')
+post6.photos.new(remote_source_url: 'https://source.unsplash.com/qIBk61vHTzs/1600x900')
 post6.save!
 
 
 post7 = Post.new(title: 'hammock', price: '9', category: 'camping gear', description: 'super nice portalble hammock for your camping trips')
 post7.user = jose
 post7.address = jose.address
-post7.photos.new(remote_source_url: 'https://images-na.ssl-images-amazon.com/images/I/61T7uO3x3ML.jpg')
+post7.photos.new(remote_source_url: 'https://source.unsplash.com/dyjH3YMblpo/1600x900')
+post7.photos.new(remote_source_url: 'https://source.unsplash.com/Sr5sVt9UG4Q/1600x900')
 post7.save!
 
 
@@ -80,7 +86,8 @@ post7.save!
 post8 = Post.new(title: 'super bright flashlight', price: '90', category: 'camping gear', description: 'a LED flashlight, super bright and water resistant')
 post8.user = gustaf
 post8.address = gustaf.address
-post8.photos.new(remote_source_url: 'https://images-na.ssl-images-amazon.com/images/I/71qszBSu%2ByL._SL1000_.jpg')
+post8.photos.new(remote_source_url: 'https://source.unsplash.com/mBz6QjRZKvc/1600x900')
+post8.photos.new(remote_source_url: 'https://source.unsplash.com/hi4uyex1tAc/1600x900')
 post8.save!
 
 
