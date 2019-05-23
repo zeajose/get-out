@@ -18,8 +18,8 @@
   </div>
 </div>
 
-  <div class="container mt-3">
-  <h4>Featured items: </h4>
+  <div class="container mt-5 mb-5">
+  <h4 class="mb-5">Featured Items: </h4>
     <div class="cards">
       <% @featured_list.each do |post| %>
         <%= link_to post_path(post.id) do %>
@@ -29,5 +29,26 @@
     </div>
   </div>
 
+  <div class="container mt-5 mb-5">
+  <h4 class="mb-5">Camping Gear: </h4>
+    <div class="cards">
+      <% @camping_gear_list.each do |post| %>
+        <%= link_to post_path(post.id) do %>
+        <%= render 'shared/feature_card', post: post %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="container mt-5 mb-5">
+  <h4 class="mb-5">Outdoor Equipment: </h4>
+    <div class="cards">
+      <% @outdoor_equipment_list.each do |post| %>
+        <%= link_to post_path(post.id) do %>
+        <%= render 'shared/feature_card', post: post %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
 
 <%= render 'shared/footer' %>

@@ -8,6 +8,10 @@ class Post < ApplicationRecord
 
   accepts_nested_attributes_for :photos
 
+  validates :photos, presence: true
+  validates :title, presence: true
+  validates :price, presence: true
+
   include PgSearch
   pg_search_scope :search_by_title_description_category,
                   :against => {

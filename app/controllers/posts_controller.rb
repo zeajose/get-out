@@ -14,7 +14,8 @@ class PostsController < ApplicationController
       }
     end
     @featured_list = @posts.last(3)
-
+    @camping_gear_list = Post.where(category: "camping gear").last(3)
+    @outdoor_equipment_list = Post.where(category: "outdoor equipment").last(3)
   end
 
   def new
