@@ -2,6 +2,8 @@
 
 
 
+
+
 <div class="payment-box">
 <div class=".payment-errors"></div>
 <form  id="stripe-form">
@@ -21,6 +23,15 @@
         <span> / </span>
         <input type="text" size="4" class="card-expiry-year"/>
     </div>
-<%= link_to "string", booking_path(@booking.id) %>
 </form>
+
+ <%= link_to booking_path(@booking, {status: 'payed'}), method: :patch  do%>
+<button> Click to confirm </button>
+ <% end %>
 </div>
+
+
+<%= link_to root_path, class: "navbar-brand" do %>
+<button> Back to the home page </button>
+ <% end %>
+

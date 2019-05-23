@@ -54,15 +54,18 @@ class BookingsController < ApplicationController
   end
 
   def update
+    @booking = Booking.find(params['id'])
+@booking.status = 'payed'
+    @booking.save!
+redirect_to booking_path(@booking)
   end
 
 def payment
-@booking = Booking.find(params['format'])
-@booking.status = 'payed'
-@booking.save
+@booking = Booking.find(params['id'])
 end
 
   private
+
 
   def booking_params
     params.require('booking').permit('start_date', 'end_date')
