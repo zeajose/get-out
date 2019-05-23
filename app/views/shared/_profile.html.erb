@@ -3,14 +3,14 @@
             <div class="modal-content">
 
                 <div class="modal-header justify-content-center">
-                    <h4 class="modal-title text-center'" id="myModalLabel">More About <%= current_user.first_name.capitalize %></h4>
+                    <h4 class="modal-title text-center'" id="myModalLabel">More About <%= @post.user.first_name.capitalize %></h4>
                 </div>
 
 
                 <div class="modal-body">
                     <center>
-                    <img src="<%= current_user.photo  %>" name="aboutme" width="140" height="140" border="0" class="rounded-circle"></a>
-                    <h3 class="media-heading"><%= current_user.first_name.capitalize %><small></small></h3>
+                    <img src="<%= @post.user.photo  %>" name="aboutme" width="140" height="140" border="0" class="rounded-circle"></a>
+                    <h3 class="media-heading"><%= @post.user.first_name.capitalize %><small></small></h3>
                     <span><strong>Interests: </strong></span>
                         <span class="badge badge-secondary">Kayaking</span>
                         <span class="badge badge-secondary">Hunting</span>
@@ -23,15 +23,15 @@
                     <br>
                     <hr>
                     <p class="text-left"><strong>Stats: </strong><br>
-                        <%= current_user.first_name.capitalize %> has <%= current_user.posts.count %> listings </p> <br>
-                        <p class=text-left><%= current_user.bookings.count %> people have renting items from <%= current_user.first_name.capitalize %> previously</p>
+                        <%= @post.user.first_name.capitalize %> has <%= @post.user.posts.count %> listings </p> <br>
+                        <p class=text-left><%= @post.user.bookings.count %> people have renting items from <%= @post.user.first_name.capitalize %> previously</p>
 
                     </center>
                 </div>
                 <div class="modal-footer justify-content-center">
                     <!-- <center> -->
 
-                    <button type="button" class="btn btn-primary" data-dismiss="modal">I've read enough about <%= current_user.first_name.capitalize %></button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">I've read enough about <%= @post.user.first_name.capitalize %></button>
                     <!-- </center> -->
                 </div>
             </div>
