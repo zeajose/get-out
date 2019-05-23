@@ -1,6 +1,12 @@
 source 'https://rubygems.org'
 ruby '2.5.3'
 
+#Search gems ------------
+
+gem 'pg_search'
+
+# ------------
+
 # Photo gems ------------
 
 # Gems for cloudinary

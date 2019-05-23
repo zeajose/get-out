@@ -71,10 +71,27 @@ class PostsController < ApplicationController
   end
 
   def search
-    @category = Post.where({ category: params[:q]})
-    @search_query = params[:q]
+    if params[:q].present?
+      @result = Post.search_by_title_description_category(params[:q])
+      @markers = markers(@result)
 
-     @markers = @category.map do |post|
+      display_all if @markers == []
+    else
+      display_all
+    end
+  end
+
+  private
+
+  # Displays all the post in the database if query was not found
+  def display_all
+    @result = Post.all
+    @markers = markers(@result)
+  end
+
+  # Gets the markers for the map
+  def markers(result)
+    markers = result.map do |post|
       {
         lat: post.latitude,
         lng: post.longitude,
@@ -82,8 +99,6 @@ class PostsController < ApplicationController
         image_url: helpers.asset_url('pin.png')
       }
       end
+    return markers
   end
 end
-
-
-

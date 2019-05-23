@@ -1,5 +1,4 @@
 class BookingsController < ApplicationController
-
   def index
     # @posts = Post.where("user_id = #{current_user.id}")
 
@@ -38,7 +37,6 @@ class BookingsController < ApplicationController
     @booking = Booking.new
     # Find the relevant post thru the params for the form
     @post = Post.find(params['post_id'])
-
   end
 
   def create
@@ -82,7 +80,16 @@ class BookingsController < ApplicationController
   end
 
   def update
+    @booking = Booking.find(params['id'])
+@booking.status = 'payed'
+    @booking.save!
+redirect_to booking_path(@booking)
   end
+
+def payment
+@booking = Booking.find(params['id'])
+    @post = @booking.post
+end
 
   private
 
