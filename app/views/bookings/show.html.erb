@@ -80,7 +80,13 @@
         <% else %>
           <i class="far fa-times-circle" style="color: grey">
         <% end %>
-      </i> Payed <br><span style="color:grey; font-size: 12px"> Price: <%= @booking.price %> CAD </span></li>
+      </i> Payed <br><span style="color:grey; font-size: 12px"> Price: <%= @booking.price %> CAD </span>
+              <% if @booking.status != 'payed' %>
+      <%= link_to payment_path(@booking.id) do %>
+      <button type="button" class="btn btn-primary btn-sm btn-block">Click here to make your payment</button>
+      <% end %>
+      <% end %>
+      </li>
 
       <li class="list-group-item">
         <% if @booking.status == 'picked_up' ||
@@ -111,10 +117,6 @@
           <i class="far fa-times-circle" style="color: grey">
         <% end %>
       </i> Completed</li>
-
-
-
-
     </ul>
   </div>
 
