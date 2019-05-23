@@ -1,5 +1,4 @@
 class BookingsController < ApplicationController
-
   def index
     @bookings = Booking.where("user_id = #{current_user.id}")
     @posts = Post.where("user_id = #{current_user.id}")
@@ -10,7 +9,6 @@ class BookingsController < ApplicationController
     @booking = Booking.new
     # Find the relevant post thru the params for the form
     @post = Post.find(params['post_id'])
-
   end
 
   def create
