@@ -74,6 +74,7 @@ class PostsController < ApplicationController
     if params[:q].present?
       @result = Post.search_by_title_description_category(params[:q])
       @markers = markers(@result)
+
       display_all if @markers == []
     else
       display_all
