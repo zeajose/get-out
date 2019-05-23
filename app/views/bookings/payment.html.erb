@@ -31,23 +31,18 @@
             <input type="text" size="4" class="card-expiry-year"/>
         </div>
       </form>
+
       <%= link_to booking_path(@booking, {status: 'payed'}), method: :patch  do%>
-      <button> Click to confirm payment </button>
+      <button class=""> Click to confirm payment </button>
       <% end %>
 
-      <%= link_to root_path, class: "navbar-brand" do %>
-      <button> Back to the home page </button>
+      <%= link_to root_path do %>
+      <button class=""> Back to the home page </button>
        <% end %>
+
      </div>
        </div>
-
-
-
-
  </div>
-
-
-
 </div>
 
 <footer class="payment-foot border-top"> <h6>Get Out, inc.</h6>  <div><span>english</span> <span>CAD - $</span> </div> </footer>
