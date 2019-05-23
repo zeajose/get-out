@@ -56,6 +56,11 @@ class BookingsController < ApplicationController
   def update
   end
 
+def payment
+
+end
+
+
   private
 
   def booking_params
