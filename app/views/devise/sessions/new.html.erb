@@ -15,10 +15,13 @@
       <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
     </div>
 
+  <%= link_to "Sing up", new_user_registration_path %>
+
     <div class="form-actions">
       <%= f.button :submit, "Log in", class: 'btn btn-primary' %>
     </div>
   <% end %>
+
 
 
 </div>
