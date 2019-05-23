@@ -2,7 +2,6 @@ Rails.application.routes.draw do
   devise_for :users
 
   get 'search', to: 'posts#search', as: :search_posts
-
   get 'payment', to: 'bookings#payment', as: :payment
 
   resources :bookings, except: [:new, :create, :destroy]
