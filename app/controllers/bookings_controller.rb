@@ -63,8 +63,6 @@ redirect_to booking_path(@booking)
 def payment
 @booking = Booking.find(params['id'])
     @post = @booking.post
-
-
 end
 
   private

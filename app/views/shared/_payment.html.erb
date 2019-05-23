@@ -1,11 +1,13 @@
-<div class="card-trip">
+<div class="card-trip ">
     <img src="<%= @post.photos[0].source %>">
     <div class="card-trip-infos">
       <div>
         <h2><%= @post.title.capitalize.truncate(30) %></h2>
-        <p> <%= @post.description.capitalize.truncate(30) %></p>
       </div>
-      <h2 class="card-trip-pricing">$<%= @post.price %> a day</h2>
+      <h2 class="card-trip-pricing">
+       <h2> Total: $<%= @booking.price %></h2>
       <img class="avatar" src="<%= @post.user.photo %>" class="card-trip-user avatar-bordered"/>
     </div>
   </div>
+
+
