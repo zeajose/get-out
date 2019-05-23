@@ -1,0 +1,36 @@
+
+<%= link_to booking_path(booking) do %>
+  <div class="card-trip">
+    <img src="<%= booking.post.photos[0].source %>">
+    <div class="card-trip-infos">
+      <div>
+        <h2><%= booking.post.title.capitalize %></h2>
+        <p> <%= booking.post.description.capitalize.truncate(40) %></p>
+        <p> <strong>Pickup:</strong> <%= booking.start_date %> <strong>Return:</strong> <%= booking.end_date %></p>
+
+        <% case booking.status %>
+        <% when 'requested' %>
+          <p>Requested, pending approval </p>
+        <% when 'confirmed' %>
+          <p>Confirmed, pending payment</p>
+        <% when 'payed' %>
+          <p>Payment confirmed</p>
+        <% when 'picked_up' %>
+          <p>Picked up</p>
+        <% when 'returned' %>
+          <p>Returned to <%= booking.post.user.first_name.capitalize %></p>
+
+        <% when 'completed' %>
+          <p>Returned to <%= booking.post.user.first_name.capitalize %></p>
+
+        <% when 'rejected' %>
+          <p>Rejected by <%= booking.post.user.first_name.capitalize %></p>
+
+        <% end %>
+
+      </div>
+      <h2 class="card-trip-pricing">$<%= booking.price %></h2>
+      <img src="<%= booking.user.photo %>" class="card-trip-user avatar-bordered"/>
+    </div>
+  </div>
+<% end %>

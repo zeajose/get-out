@@ -81,15 +81,24 @@ class BookingsController < ApplicationController
 
   def update
     @booking = Booking.find(params['id'])
-@booking.status = 'payed'
+    @booking.status = 'payed'
     @booking.save!
-redirect_to booking_path(@booking)
+    redirect_to booking_path(@booking)
   end
 
-def payment
-@booking = Booking.find(params['id'])
+  def payment
+    @booking = Booking.find(params['id'])
     @post = @booking.post
-end
+  end
+
+  def confirm
+    @booking = Booking.find(params['id'])
+    @booking.status = 'confirmed'
+    @booking.save
+    redirect_to booking_path(@booking)
+  end
+
+
 
   private
 

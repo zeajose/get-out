@@ -37,8 +37,27 @@
     </li> -->
   </ul>
 
+
+
   <% if @posts.present?  %>
 
+    <% if @posts[0].bookings[0].present?  %>
+      <p>You have pending requests</p>
+      <div class="cards">
+        <% @posts.each do |post| %>
+          <% post.bookings.each do |booking| %>
+            <% if booking.status == 'requested' %>
+              <%= render 'shared/mylistings_booking_card', booking: booking %>
+            <% end %>
+
+          <% end %>
+        <% end %>
+      </div>
+      <br>
+      <hr>
+    <% end %>
+
+    <p>These are all your active listings:</p>
     <div class="cards">
       <% @posts.each do |post| %>
         <%= render 'shared/posts_card', post: post %>
