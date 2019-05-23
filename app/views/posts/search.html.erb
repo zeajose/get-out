@@ -2,20 +2,14 @@
 <div class="main-container">
 
   <div class="cards">
-    <% @category.each do |post| %>
-        <div class="card-search" style="background-image: url(<%= post.photos.first.source.url %>);">
-          <%= post.title.capitalize %>
-        </div>
+    <% @result.each do |post| %>
+      <%= link_to post_path(post.id), class: "card-search", style: "background-image: url(#{post.photos.first.source.url})", method: :get do%>
+          <h4> <%= post.title.capitalize %> </h4>
+      <% end %>
     <% end %>
-
-<!--   <div class="container mt-3">
-  <h1>Search Results: </h1>
-  <div class="cards">
-    <%# @category.each do |item| %> -->
-        <%#= link_to post_path(item.id) do %>
-    <%#= render 'shared/feature_card', post: item %>
   </div>
-    <div
+  
+    <div>
     id="map"
     style="width: 40%;
     height: 90vh;
