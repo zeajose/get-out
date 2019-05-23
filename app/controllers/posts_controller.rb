@@ -72,7 +72,7 @@ class PostsController < ApplicationController
 
   def search
     if params[:q].present?
-      @result = Post.where({ category: params[:q]})
+      @result = Post.search_by_title_description_category(params[:q])
 
       @markers = @result.map do |post|
         {
