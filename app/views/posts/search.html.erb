@@ -3,7 +3,7 @@
 
   <div class="cards">
     <% @category.each do |post| %>
-        <div class="card" style="background-image: url(<%= post.photos.first.source.url %>);">
+        <div class="card-search" style="background-image: url(<%= post.photos.first.source.url %>);">
           <%= post.title.capitalize %>
         </div>
     <% end %>
