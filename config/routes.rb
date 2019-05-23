@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   get 'search', to: 'posts#search', as: :search_posts
   get '/bookings/:id/payment', to: 'bookings#payment', as: :payment
+  get '/bookings/:id/confirm', to: 'bookings#confirm', as: :confirm
 
   resources :bookings, except: [:new, :create, :destroy]
 
