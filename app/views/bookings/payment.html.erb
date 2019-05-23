@@ -1,37 +1,55 @@
-<h1>Payment details: </h1>
+
+<%= render 'shared/navbar' %>
+
+<div class="container">
+
+  <div class="row ">
+
+  <div class="col-3 border mr-1 ">
+    <h1>something</h1>
+  </div>
+
+    <div class="col-8 border">
+      <h1>Payment details: </h1>
+      <div class="payment-box">
+      <div class=".payment-errors"></div>
+      <form  id="stripe-form">
+        <div class="formset">
+            <label>Card Number</label>
+            <input type="text" size="20" autocomplete="off" class="credit-number" />
+        </div>
+
+        <div class="formset">
+            <label>Security Code/CVC</label>
+            <input type="text" size="4" autocomplete="off" class="credit-scurity" />
+        </div>
+
+        <div class="formset">
+            <label>Expiration (MM/YYYY)</label>
+            <input type="text" size="2" class="card-expiry-month"/>
+            <span> / </span>
+            <input type="text" size="4" class="card-expiry-year"/>
+        </div>
+      </form>
+      <%= link_to booking_path(@booking, {status: 'payed'}), method: :patch  do%>
+      <button> Click to confirm payment </button>
+      <% end %>
+
+      <%= link_to root_path, class: "navbar-brand" do %>
+      <button> Back to the home page </button>
+       <% end %>
+     </div>
+       </div>
 
 
 
 
-
-<div class="payment-box">
-<div class=".payment-errors"></div>
-<form  id="stripe-form">
-    <div class="formset">
-        <label>Card Number</label>
-        <input type="text" size="20" autocomplete="off" class="credit-number" />
-    </div>
-
-    <div class="formset">
-        <label>Security Code/CVC</label>
-        <input type="text" size="4" autocomplete="off" class="credit-scurity" />
-    </div>
-
-    <div class="formset">
-        <label>Expiration (MM/YYYY)</label>
-        <input type="text" size="2" class="card-expiry-month"/>
-        <span> / </span>
-        <input type="text" size="4" class="card-expiry-year"/>
-    </div>
-</form>
-
- <%= link_to booking_path(@booking, {status: 'payed'}), method: :patch  do%>
-<button> Click to confirm </button>
- <% end %>
+ </div>
 </div>
 
 
-<%= link_to root_path, class: "navbar-brand" do %>
-<button> Back to the home page </button>
- <% end %>
 
+
+
+
+<footer class="payment-foot"> <h6>Get Out, inc.</h6>         <div><span>english</span> <span>CAD - $</span> </div> </footer>
