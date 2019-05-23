@@ -4,9 +4,9 @@
   <div class="card-trip-infos">
     <div>
       <h2><%= @booking.post.title  %></h2>
-      <p><%= @booking.post.description  %></p>
+      <p><%= @booking.post.description.truncate(25) %></p>
     </div>
-    <h2 class="card-trip-pricing"><%= @booking.post.price %></h2>
+    <h2 class="card-trip-pricing"> $ <%= @booking.post.price %></h2>
     <img src='<%= @booking.post.user.photo %>' class="card-trip-user avatar-bordered"/>
   </div>
 </div>
