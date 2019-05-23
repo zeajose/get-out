@@ -1,10 +1,10 @@
 
+<%= render 'shared/navbar' %>
 
 <% if @booking.post.photos[0].nil?  %>
   <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://previews.123rf.com/images/aquir/aquir1409/aquir140900882/32038501-missing-red-grungy-stamp-on-white-background.jpg);">
 <% else %>
 
-<%= render 'shared/navbar' %>
 
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= @booking.post.photos[0].source %>);">
 <% end %>
@@ -80,7 +80,14 @@
         <% else %>
           <i class="far fa-times-circle" style="color: grey">
         <% end %>
-      </i> Payed <br><span style="color:grey; font-size: 12px"> Price: <%= @booking.price %> CAD </span></li>
+
+      </i> Paid <br><span style="color:grey; font-size: 12px"> Price: <%= @booking.price %> CAD </span>
+              <% if @booking.status != 'payed' %>
+      <%= link_to payment_path(@booking.id) do %>
+      <button type="button" class="btn btn-primary btn-sm btn-block">Click here to make your payment</button>
+      <% end %>
+      <% end %>
+      </li>
 
       <li class="list-group-item">
         <% if @booking.status == 'picked_up' ||
@@ -111,10 +118,6 @@
           <i class="far fa-times-circle" style="color: grey">
         <% end %>
       </i> Completed</li>
-
-
-
-
     </ul>
   </div>
 

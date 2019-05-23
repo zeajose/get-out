@@ -5,7 +5,7 @@
     <div class="card-trip-infos">
       <div>
         <h2><%= booking.post.title.capitalize %></h2>
-        <p> <%= booking.post.description.capitalize %></p>
+        <p> <%= booking.post.description.capitalize.truncate(40) %></p>
         <p> <strong>Pickup:</strong> <%= booking.start_date %> <strong>Return:</strong> <%= booking.end_date %></p>
 
         <% case booking.status %>
@@ -29,7 +29,7 @@
         <% end %>
 
       </div>
-      <h2 class="card-trip-pricing"><%= booking.price %> CAD </h2>
+      <h2 class="card-trip-pricing">$<%= booking.price %></h2>
       <img src="<%= booking.post.user.photo %>" class="card-trip-user avatar-bordered"/>
     </div>
   </div>

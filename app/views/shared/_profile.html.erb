@@ -1,0 +1,39 @@
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-header justify-content-center">
+                    <h4 class="modal-title text-center'" id="myModalLabel">More About <%= @post.user.first_name.capitalize %></h4>
+                </div>
+
+
+                <div class="modal-body">
+                    <center>
+                    <img src="<%= @post.user.photo  %>" name="aboutme" width="140" height="140" border="0" class="rounded-circle"></a>
+                    <h3 class="media-heading"><%= @post.user.first_name.capitalize %><small></small></h3>
+                    <span><strong>Interests: </strong></span>
+                        <span class="badge badge-secondary">Kayaking</span>
+                        <span class="badge badge-secondary">Hunting</span>
+                        <span class="badge badge-secondary">Sailing</span>
+                    </center>
+                    <hr>
+                    <center>
+                    <p class="text-left"><strong>Bio: </strong><br>
+                        I love being out in nature, especially kayaking, saling and fishing.</p>
+                    <br>
+                    <hr>
+                    <p class="text-left"><strong>Stats: </strong><br>
+                        <%= @post.user.first_name.capitalize %> has <%= @post.user.posts.count %> listings </p> <br>
+                        <p class=text-left><%= @post.user.bookings.count %> people have renting items from <%= @post.user.first_name.capitalize %> previously</p>
+
+                    </center>
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <!-- <center> -->
+
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">I've read enough about <%= @post.user.first_name.capitalize %></button>
+                    <!-- </center> -->
+                </div>
+            </div>
+        </div>
+    </div>
