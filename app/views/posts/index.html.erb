@@ -3,11 +3,11 @@
   <%= render 'shared/navbar_home' %>
 
   <div class="container">
-    <h1>Montreal <strong>Outdoor Sports</strong>!</h1>
+    <h1>Get. <strong>Out.</strong></h1>
     <p>Bikes, cars, drones, rent anything you want.</p>
 
     <!-- Search box -->
-    <div class="search__container">
+    <div class="search_container">
       <%= form_tag(search_posts_path, method: "get") do %>
         <%= text_field_tag :q, "", class: "search__input", placeholder: "search"%>
         <%#= submit_tag("Search") %>
@@ -21,9 +21,9 @@
 
 
 
-  <h5>Featured items: </h5>
 
   <div class="container mt-3">
+  <h4>Featured items: </h4>
     <div class="cards">
       <% @featured_list.each do |post| %>
         <%= link_to post_path(post.id) do %>
