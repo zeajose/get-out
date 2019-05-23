@@ -73,30 +73,31 @@ class PostsController < ApplicationController
   def search
     if params[:q].present?
       @result = Post.search_by_title_description_category(params[:q])
-
-      @markers = @result.map do |post|
-        {
-          lat: post.latitude,
-          lng: post.longitude,
-          infoWindow: render_to_string(partial: "infowindow", locals: { post: post }),
-          image_url: helpers.asset_url('pin.png')
-        }
-      end
+      @markers = markers(@result)
+      display_all if @markers == []
     else
-      @result = Post.all
-
-      @markers = @result.map do |post|
-        {
-          lat: post.latitude,
-          lng: post.longitude,
-          infoWindow: render_to_string(partial: "infowindow", locals: { post: post }),
-          image_url: helpers.asset_url('pin.png')
-        }
-      end
+      display_all
     end
   end
 
+  private
+
+  # Displays all the post in the database if query was not found
+  def display_all
+    @result = Post.all
+    @markers = markers(@result)
+  end
+
+  # Gets the markers for the map
+  def markers(result)
+    markers = result.map do |post|
+      {
+        lat: post.latitude,
+        lng: post.longitude,
+        infoWindow: render_to_string(partial: "infowindow", locals: { post: post }),
+        image_url: helpers.asset_url('pin.png')
+      }
+      end
+    return markers
+  end
 end
-
-
-
