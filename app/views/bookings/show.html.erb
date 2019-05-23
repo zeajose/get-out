@@ -82,7 +82,7 @@
         <% end %>
       </i> Payed <br><span style="color:grey; font-size: 12px"> Price: <%= @booking.price %> CAD </span>
               <% if @booking.status != 'payed' %>
-      <%= link_to payment_path(@booking) do %>
+      <%= link_to payment_path(@booking.id) do %>
       <button type="button" class="btn btn-primary btn-sm btn-block">Click here to make your payment</button>
       <% end %>
       <% end %>

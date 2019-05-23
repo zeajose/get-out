@@ -1,1 +1,26 @@
-<h1>test</h1>
+<h1>Payment details: </h1>
+
+
+
+<div class="payment-box">
+<div class=".payment-errors"></div>
+<form  id="stripe-form">
+    <div class="formset">
+        <label>Card Number</label>
+        <input type="text" size="20" autocomplete="off" class="credit-number" />
+    </div>
+
+    <div class="formset">
+        <label>Security Code/CVC</label>
+        <input type="text" size="4" autocomplete="off" class="credit-scurity" />
+    </div>
+
+    <div class="formset">
+        <label>Expiration (MM/YYYY)</label>
+        <input type="text" size="2" class="card-expiry-month"/>
+        <span> / </span>
+        <input type="text" size="4" class="card-expiry-year"/>
+    </div>
+<%= link_to "string", booking_path(@booking.id) %>
+</form>
+</div>

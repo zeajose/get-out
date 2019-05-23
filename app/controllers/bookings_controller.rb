@@ -57,9 +57,10 @@ class BookingsController < ApplicationController
   end
 
 def payment
-
+@booking = Booking.find(params['format'])
+@booking.status = 'payed'
+@booking.save
 end
-
 
   private
 
