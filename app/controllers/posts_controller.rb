@@ -30,13 +30,11 @@ class PostsController < ApplicationController
                      price: params['post'][:price],
                      category: params['post'][:category],
                      user: current_user)
+    @post.photos.new(source: params['post']['photos_attributes']['0']['source'])
     if @post.save
-      @photo = Photo.new(source: params['post']['photos_attributes']['0']['source'],
-                         post: @post)
-      @photo.save
       redirect_to post_path(@post.id)
     else
-      redirect_to new_post_path
+      render :new
     end
   end
 
