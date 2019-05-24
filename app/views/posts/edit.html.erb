@@ -21,7 +21,8 @@
       <%= f.input :price %>
       <%= f.input :category %>
 
-      <%= f.simple_fields_for :photos do |p| %>
+      <%= f.simple_fields_for :photos do |p, photo| %>
+        <%= cl_image_tag p.object.source, width: 60, height: 60 %>
         <%= p.input :source %>
         <%= p.input :source_cache, as: :hidden %>
       <% end %>
