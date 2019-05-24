@@ -38,15 +38,31 @@
 
         </div>
         <h2 class="card-trip-pricing"> $ <%= @post.price  %></h2>
-        <img src="<%= @post.user.photo %>" class="card-trip-user avatar-bordered"/>
+
+<!--
+        <img src="<%#= @post.user.photo %>" class="card-trip-user avatar-bordered"/>
+ -->
+        <span class="span3 well">
+
+        <a href="#aboutModal" data-toggle="modal" data-target="#myModal"><img src="<%= @post.user.photo %>" name="aboutme" z-index="3000" class="card-trip-user avatar-bordered"></a>
+            <%= render 'shared/profile' %>
+        </span>
+
+
+
       </div>
     </div>
 
     <div class="col-4 p-4 " style="background-color: white">
-      <h2> $<%= @post.price %> per day </h2>
-      <p> <b> <%= @user.first_name.capitalize %></b> </p>
-      <p> Address: <%= @post.address %> </p>
-      <p>Description: <%= @post.description %></p>
+      <span class="span3 well">
+        <a href="#aboutModal" data-toggle="modal" data-target="#myModal">
+          <h2> $<%= @post.price %> per day </h2>
+          <p> <b> <%= @user.first_name.capitalize %></b> </p>
+          <p> Address: <%= @post.address %> </p>
+          <p>Description: <%= @post.description %></p>
+        </a>
+        <%= render 'shared/profile' %>
+      </span>
 
       <!-- categories option -->
 
@@ -60,6 +76,8 @@
       <%= f.input :end_date, html5: true %>
       <%= f.submit "request", class: "btn btn-warning" %>
       <% end %>
+
+
 
     </div>
 

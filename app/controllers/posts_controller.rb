@@ -14,7 +14,8 @@ class PostsController < ApplicationController
       }
     end
     @featured_list = @posts.last(3)
-
+    @camping_gear_list = Post.where(category: "camping gear").last(3)
+    @outdoor_equipment_list = Post.where(category: "outdoor equipment").last(3)
   end
 
   def new
@@ -29,13 +30,11 @@ class PostsController < ApplicationController
                      price: params['post'][:price],
                      category: params['post'][:category],
                      user: current_user)
+    @post.photos.new(source: params['post']['photos_attributes']['0']['source'])
     if @post.save
-      @photo = Photo.new(source: params['post']['photos_attributes']['0']['source'],
-                         post: @post)
-      @photo.save
       redirect_to post_path(@post.id)
     else
-      redirect_to new_post_path
+      render :new
     end
   end
 
@@ -74,6 +73,7 @@ class PostsController < ApplicationController
     if params[:q].present?
       @result = Post.search_by_title_description_category(params[:q])
       @markers = markers(@result)
+
       display_all if @markers == []
     else
       display_all

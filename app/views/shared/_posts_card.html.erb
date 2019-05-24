@@ -1,0 +1,18 @@
+
+<%= link_to post_path(post) do %>
+  <div class="card-trip">
+    <img src="<%= post.photos[0].source %>">
+    <div class="card-trip-infos">
+      <div>
+        <h2><%= post.title.capitalize %></h2>
+        <p> <%= post.description.capitalize.truncate(35) %></p>
+        <!-- <p> <strong>Pickup:</strong> <%#= booking.start_date %> <strong>Return:</strong> <%#= booking.end_date %></p>
+ -->
+
+
+      </div>
+      <h2 class="card-trip-pricing"><%= post.price %> CAD </h2>
+      <img src="<%= post.user.photo %>" class="card-trip-user avatar-bordered"/>
+    </div>
+  </div>
+<% end %>

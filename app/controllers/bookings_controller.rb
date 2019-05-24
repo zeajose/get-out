@@ -1,7 +1,35 @@
 class BookingsController < ApplicationController
   def index
-    @bookings = Booking.where("user_id = #{current_user.id}")
-    @posts = Post.where("user_id = #{current_user.id}")
+    # @posts = Post.where("user_id = #{current_user.id}")
+
+    if params['show'].present? && params['show'] == 'listings'
+      @posts = Post.where("user_id = #{current_user.id}")
+
+    elsif params['show'].present? && params['show'] == 'requested'
+      status = %w[requested]
+      @bookings = Booking.where(user_id: current_user, status: status)
+
+    elsif params['show'].present? && params['show'] == 'completed'
+      status = %w[completed returned]
+      @bookings = Booking.where(user_id: current_user, status: status)
+
+    elsif params['show'].nil? || params['show'] == 'active'
+      status = %w[confirmed requested payed picked_up]
+      @bookings = Booking.where(user_id: current_user, status: status)
+
+    elsif params['show'].nil? || params['show'] == 'rejected'
+      status = %w[rejected cancelled]
+      @bookings = Booking.where(user_id: current_user, status: status)
+
+    elsif params['show'].nil? || params['show'] == 'all'
+      @bookings = Booking.where(user_id: current_user)
+
+    elsif params['show'].nil? || params['show'] == 'profile'
+      @bookings = ''
+      @posts = ''
+      @profile = true
+    end
+
   end
 
   def new
@@ -52,7 +80,25 @@ class BookingsController < ApplicationController
   end
 
   def update
+    @booking = Booking.find(params['id'])
+    @booking.status = 'payed'
+    @booking.save!
+    redirect_to booking_path(@booking)
   end
+
+  def payment
+    @booking = Booking.find(params['id'])
+    @post = @booking.post
+  end
+
+  def confirm
+    @booking = Booking.find(params['id'])
+    @booking.status = 'confirmed'
+    @booking.save
+    redirect_to booking_path(@booking)
+  end
+
+
 
   private
 

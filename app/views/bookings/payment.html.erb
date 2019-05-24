@@ -1,0 +1,52 @@
+
+<%= render 'shared/navbar' %>
+
+<div class="container mt-3">
+
+  <div class="row d-flex justify-content-center ">
+
+  <div class="col-4">
+    <%= render 'shared/payment' %>
+  </div>
+
+    <div class="col-7  border">
+      <h1>Payment details: </h1>
+      <div class="payment-box">
+      <div class=".payment-errors"></div>
+      <form  id="stripe-form">
+        <div class="formset">
+            <label>Card Number</label>
+            <input type="text" size="20" autocomplete="off" class="credit-number" />
+        </div>
+
+        <div class="formset">
+            <label>Security Code/CVC</label>
+            <input type="text" size="4" autocomplete="off" class="credit-scurity" />
+        </div>
+
+        <div class="formset">
+            <label>Expiration (MM/YYYY)</label>
+            <input type="text" size="2" class="card-expiry-month"/>
+            <span> / </span>
+            <input type="text" size="4" class="card-expiry-year"/>
+        </div>
+      </form>
+
+      <%= link_to booking_path(@booking, {status: 'payed'}), method: :patch  do%>
+      <button class=""> Click to confirm payment </button>
+      <% end %>
+
+      <%= link_to root_path do %>
+      <button class=""> Back to the home page </button>
+       <% end %>
+
+     </div>
+       </div>
+ </div>
+</div>
+
+<footer class="payment-foot border-top"> <h6>Get Out, inc.</h6>  <div><span>english</span> <span>CAD - $</span> </div> </footer>
+
+
+
+

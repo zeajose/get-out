@@ -1,26 +1,13 @@
-<% if @booking.present? %>
+
 <div class="card-trip">
-  <img src="<%= @booking.post.photos[0].source %>">
+  <img src="<%= post.photos[0].source %>">
   <div class="card-trip-infos">
     <div>
-      <h2><%= @booking.post.title  %></h2>
-      <p><%= @booking.post.description  %></p>
-    </div>
-    <h2 class="card-trip-pricing"><%= @booking.post.price %></h2>
-    <img src='<%= @booking.post.user.photo %>' class="card-trip-user avatar-bordered"/>
-  </div>
-</div>
-<% elsif @result.present? %>
-<div class="card-trip">
-  <img src=" @result.photos[0].source ">
-  <div class="card-trip-infos">
-    <div>
-      <h2><%= @result.title %></h2>
-      <p><%= @result.description %></p>
+      <h2><%= post.title %></h2>
+      <p><%= post.description %></p>
     </div>
     <h2 class="card-trip-pricing"></h2>
-    <img src='<%= @result.user.photo %>' class="card-trip-user avatar-bordered"/>
+    <img src='<%= post.user.photo %>' class="card-trip-user avatar-bordered"/>
   </div>
 </div>
 
-<% end %>

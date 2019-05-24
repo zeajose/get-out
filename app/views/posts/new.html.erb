@@ -15,12 +15,18 @@
       <% end %>
 
       <!-- [...] all the fields -->
-      <%= f.input :title %>
+      <%= f.input :title,
+                  required: true,
+                  autofocus: true,
+                  input_html: { autocomplete: "title" }%>
       <%= f.input :description %>
       <%= f.input :address %>
-      <%= f.input :price, as: :integer %>
-      <%= f.input :category, collection: ['camping gear', 'sleeping bags', 'knifes and tools', 'outdoor living', 'outdoor equipment' ]%>
-
+      <%= f.input :price, as: :integer,
+                  required: true,
+                  autofocus: true,
+                  input_html: { autocomplete: "price" }%>
+      <%= f.input :category, collection: ['camping gear', 'sleeping bags', 'knifes and tools', 'outdoor living', 'outdoor equipment' ],
+                  required: true%>
       <%= f.simple_fields_for :photos do |p| %>
         <%= p.input :source, required: true %>
         <%= p.input :source_cache, as: :hidden %>
