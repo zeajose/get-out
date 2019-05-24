@@ -175,7 +175,7 @@ Booking.create(user: jose, post: post6, start_date: '2019-05-30', end_date: '201
 Booking.create(user: jose, post: post7, start_date: '2019-05-30', end_date: '2019-06-23', price: '154', status: 'picked_up')
 Booking.create(user: jose, post: post8, start_date: '2019-05-30', end_date: '2019-06-23', price: '357', status: 'requested')
 
-Booking.create(user: gustaf, post: post1, start_date: '2019-05-30', end_date: '2019-06-01', price: '1337', status: 'requested')
+Booking.create(user: gustaf, post: post1, start_date: '2019-05-30', end_date: '2019-06-01', price: '1337', status: 'confirmed')
 Booking.create(user: gustaf, post: post2, start_date: '2019-05-30', end_date: '2019-07-01', price: '17', status: 'confirmed')
 Booking.create(user: gustaf, post: post3, start_date: '2019-05-30', end_date: '2019-09-21', price: '12312', status: 'payed')
 Booking.create(user: gustaf, post: post4, start_date: '2019-05-30', end_date: '2019-06-01', price: '120', status: 'picked_up')
