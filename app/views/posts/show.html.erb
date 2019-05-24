@@ -18,10 +18,8 @@
         </ol>
         <div class="carousel-inner">
           <% @post.photos.each do |photo| %>
-            <div class="carousel-item <%= "active" if @post.photos.first == photo %>">
-
-              <img src="<%= photo.source.url %>" class="d-block h-100" style="background-size: cover; background-position: center; width: 100%">
-
+            <div class="carousel-item <%= 'active' if @post.photos.first == photo %>">
+              <img src="<%= photo.source.url %>" class="d-block w-100">
             </div>
           <% end %>
 
@@ -38,11 +36,10 @@
 
       <div class="card-trip-infos">
         <div>
-          <% if user_signed_in? %>
+          <% if @post.user == current_user %>
             <%= link_to "Update", edit_post_path(@post), class: "btn btn-light border button-main"%>
           <% end %>
         </div>
-        <h2 class="card-trip-pricing"> $ <%= @post.price  %></h2>
 
 <!--
         <img src="<%#= @post.user.photo %>" class="card-trip-user avatar-bordered"/>
