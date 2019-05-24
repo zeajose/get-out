@@ -78,6 +78,32 @@
       <%= f.input :end_date, html5: true %>
       <%= f.submit "request", class: "btn btn-warning" %>
       <% end %>
+
+      <span id="price-display" class="visibility: hidden"> <%= @post.price.to_i %> </span>
+
     </div>
   </div>
 </div>
+
+
+
+<script>
+// select = id="booking_end_date"
+// event = change
+// make a span with visibility hidden
+// the event listner then toggles a CSS class that gives it visibility
+//how do i make the booking price var accessable within the scrip tag???
+
+
+divSelect = document.get​Element​ById("price-display")
+textFieldStart = document.get​Element​ById("booking_start_date")
+textFieldFinal = document.get​Element​ById("booking_end_date")
+textField.addEventListener('change', (event) => {
+val = textFieldFinal - textFieldStart
+divSelect.innerHTML = parseInt(val, 10);
+})
+
+
+   </script>
+
+
