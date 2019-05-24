@@ -74,6 +74,7 @@ class BookingsController < ApplicationController
         infoWindow: render_to_string(partial: "infowindow", locals: { post: @post }),
         image_url: helpers.asset_url('pin.png')
       }]
+      raise
   end
 
   def edit
@@ -99,10 +100,9 @@ class BookingsController < ApplicationController
   end
 
 
-
   private
 
   def booking_params
-    params.require('booking').permit('start_date', 'end_date')
+    params.require('booking').permit('start_date', 'end_date', 'rating')
   end
 end
