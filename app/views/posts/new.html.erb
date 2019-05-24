@@ -28,7 +28,7 @@
       <%= f.input :category, collection: ['camping gear', 'sleeping bags', 'knifes and tools', 'outdoor living', 'outdoor equipment' ],
                   required: true%>
       <%= f.simple_fields_for :photos do |p| %>
-        <%= p.input :source, required: true %>
+        <%= p.input :source, required: true, input_html: { multiple: true }  %>
         <%= p.input :source_cache, as: :hidden %>
       <% end %>
 

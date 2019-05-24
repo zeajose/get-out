@@ -13,10 +13,10 @@ User.destroy_all
 
 puts 'Creating users...'
 
-joe = User.create(first_name: 'joe', email: 'joe@email.com', password: '123456', address: '950 Notre-Dame ouest, montreal', remote_photo_url: "https://kitt.lewagon.com/placeholder/users/jdilillo")
-thomas = User.create(first_name: 'thomas', email: 'thomas@email.com', password: '123456', address: '400 rue de l´inspecteur montreal', remote_photo_url: "https://kitt.lewagon.com/placeholder/users/tomkf")
-jose = User.create(first_name: 'jose', email: 'jose@email.com', password: '123456', address: '9073 d´aillon, montreal', remote_photo_url: "https://kitt.lewagon.com/placeholder/users/zeajose")
-gustaf = User.create(first_name: 'gustaf', email: 'gustaf@email.com', password: '123456', address: '8776 barbeau, montreal', remote_photo_url: "https://kitt.lewagon.com/placeholder/users/gfmar")
+joe = User.create(first_name: 'joe', email: 'joe@email.com', password: '123456', address: '950 Notre-Dame ouest, montreal', remote_photo_url: "https://kitt.lewagon.com/placeholder/users/jdilillo", rating: 1)
+thomas = User.create(first_name: 'thomas', email: 'thomas@email.com', password: '123456', address: '400 rue de l´inspecteur montreal', remote_photo_url: "https://kitt.lewagon.com/placeholder/users/tomkf", rating: 5)
+jose = User.create(first_name: 'jose', email: 'jose@email.com', password: '123456', address: '9073 d´aillon, montreal', remote_photo_url: "https://kitt.lewagon.com/placeholder/users/zeajose", rating: 2)
+gustaf = User.create(first_name: 'gustaf', email: 'gustaf@email.com', password: '123456', address: '8776 barbeau, montreal', remote_photo_url: "https://kitt.lewagon.com/placeholder/users/gfmar", rating: 4)
 
 
 puts 'Creating posts and photos....'

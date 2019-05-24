@@ -183,7 +183,7 @@
   top: 0;
 }
 
-input {
+#card-front input {
   border: none;
   outline: none;
   background-color: #5a9def;
@@ -198,50 +198,3 @@ input {
   font-family: 'helvetica-light', 'sans-serif';
   letter-spacing: .7px;
 }
-
-input::-webkit-input-placeholder {
-  color: #fff;
-  opacity: 0.7;
-  font-family: 'helvetica-light', 'sans-serif';
-  font-weight: 300;
-  letter-spacing: 1px;
-  font-size: 10px;
-}
-
-input:-moz-placeholder {
-  color: #fff;
-  opacity: 0.7;
-  font-family: 'helvetica-light', 'sans-serif';
-  font-weight: 300;
-  letter-spacing: 1px;
-  font-size: 10px;
-}
-
-input::-moz-placeholder {
-  color: #fff;
-  opacity: 0.7;
-  font-family: 'helvetica-light', 'sans-serif';
-  font-weight: 300;
-  letter-spacing: 1px;
-  font-size: 10px;
-}
-
-input:-ms-input-placeholder {
-  color: #fff;
-  opacity: 0.7;
-  font-family: 'helvetica-light', 'sans-serif';
-  font-weight: 300;
-  letter-spacing: 1px;
-  font-size: 10px;
-}
-
-input.invalid {
-  border: solid 2px #eb0000;
-  height: 34px;
-}
-
-label {
-  display: block;
-  margin: 0 auto 7px;
-}
-
