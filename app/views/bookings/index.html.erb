@@ -159,7 +159,7 @@
             <hr>
             <br>
 
-                    <% if current_user.rating %>
+            <% if current_user.rating %>
              <div class="insert-area">Previous renters have said: </p>
               <% current_user.rating.times do %>
                 <span class="fa fa-star checked"></span>
@@ -167,8 +167,8 @@
               <% (5 - current_user.rating).times do %>
                 <span class="fa fa-star"></span>
               <% end %>
-            <% end %>
             </div>
+            <% end %>
             <br>
 
             <p class="text-left"><strong>Stats: </strong><br>

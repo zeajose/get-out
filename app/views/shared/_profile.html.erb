@@ -32,8 +32,8 @@
               <% (5 - @post.user.rating).times do %>
                 <span class="fa fa-star"></span>
               <% end %>
+              </div>
             <% end %>
-            </div>
                     <p class="text-left"><strong>Stats: </strong><br>
                         <%= @post.user.first_name.capitalize %> has <%= @post.user.posts.count %> listings </p> <br>
                         <p class=text-left><%= @post.user.bookings.count %> people have renting items from <%= @post.user.first_name.capitalize %> previously</p>
