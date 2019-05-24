@@ -64,6 +64,7 @@ class BookingsController < ApplicationController
 
   def show
     # Find the booking using the params
+
     @booking = Booking.find(params['id'])
     @post = @booking.post
     @markers =
@@ -73,7 +74,7 @@ class BookingsController < ApplicationController
         infoWindow: render_to_string(partial: "infowindow", locals: { post: @post }),
         image_url: helpers.asset_url('pin.png')
       }]
-  end
+    end
 
   def edit
   end
@@ -98,10 +99,9 @@ class BookingsController < ApplicationController
   end
 
 
-
   private
 
   def booking_params
-    params.require('booking').permit('start_date', 'end_date')
+    params.require('booking').permit('start_date', 'end_date', 'rating')
   end
 end
