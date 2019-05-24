@@ -148,7 +148,7 @@ post8.save!
 
 puts 'Creating some fake bookings...'
 
-Booking.create(user: joe, post: post1, start_date: '2019-05-30', end_date: '2019-06-01', price: '1337', status: 'requested')
+# Booking.create(user: joe, post: post1, start_date: '2019-05-30', end_date: '2019-06-01', price: '1337', status: 'requested')
 Booking.create(user: joe, post: post2, start_date: '2019-05-30', end_date: '2019-07-01', price: '250', status: 'confirmed')
 Booking.create(user: joe, post: post3, start_date: '2019-05-30', end_date: '2019-09-21', price: '12312', status: 'payed')
 Booking.create(user: joe, post: post4, start_date: '2019-05-30', end_date: '2019-06-01', price: '330', status: 'picked_up')
@@ -157,16 +157,16 @@ Booking.create(user: joe, post: post6, start_date: '2019-05-30', end_date: '2019
 Booking.create(user: joe, post: post7, start_date: '2019-05-30', end_date: '2019-06-23', price: '24', status: 'picked_up')
 Booking.create(user: joe, post: post8, start_date: '2019-05-30', end_date: '2019-06-23', price: '15', status: 'requested')
 
-Booking.create(user: thomas, post: post1, start_date: '2019-05-30', end_date: '2019-06-01', price: '137', status: 'requested')
+# Booking.create(user: thomas, post: post1, start_date: '2019-05-30', end_date: '2019-06-01', price: '137', status: 'requested')
 Booking.create(user: thomas, post: post2, start_date: '2019-05-30', end_date: '2019-07-01', price: '170', status: 'confirmed')
 Booking.create(user: thomas, post: post3, start_date: '2019-05-30', end_date: '2019-09-21', price: '12312', status: 'payed')
 Booking.create(user: thomas, post: post4, start_date: '2019-05-30', end_date: '2019-06-01', price: '120', status: 'picked_up')
-Booking.create(user: thomas, post: post5, start_date: '2019-05-30', end_date: '2019-08-11', price: '27', status: 'returned')
+Booking.create(user: thomas, post: post5, start_date: '2019-05-30', end_date: '2019-08-11', price: '27', status: 'requested')
 Booking.create(user: thomas, post: post6, start_date: '2019-05-30', end_date: '2019-06-23', price: '17', status: 'rejected')
 Booking.create(user: thomas, post: post7, start_date: '2019-05-30', end_date: '2019-06-23', price: '347', status: 'picked_up')
 Booking.create(user: thomas, post: post8, start_date: '2019-05-30', end_date: '2019-06-23', price: '257', status: 'requested')
 
-Booking.create(user: jose, post: post1, start_date: '2019-05-30', end_date: '2019-06-01', price: '1337', status: 'requested')
+# Booking.create(user: jose, post: post1, start_date: '2019-05-30', end_date: '2019-06-01', price: '1337', status: 'requested')
 Booking.create(user: jose, post: post2, start_date: '2019-05-30', end_date: '2019-07-01', price: '172', status: 'confirmed')
 Booking.create(user: jose, post: post3, start_date: '2019-05-30', end_date: '2019-09-21', price: '12312', status: 'payed')
 Booking.create(user: jose, post: post4, start_date: '2019-05-30', end_date: '2019-06-01', price: '120', status: 'picked_up')
@@ -185,4 +185,4 @@ Booking.create(user: gustaf, post: post7, start_date: '2019-05-30', end_date: '2
 Booking.create(user: gustaf, post: post8, start_date: '2019-05-30', end_date: '2019-06-23', price: '7', status: 'requested')
 
 
-# puts 'Finished!'
+puts 'Finished!'
