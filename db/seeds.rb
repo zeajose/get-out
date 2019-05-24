@@ -64,7 +64,7 @@ post3.save!
 
 post31 = Post.new(title: 'Hunting Riffle', price: '100', category: 'outdoor equipment', description: 'bad ass sniper rifle, perfect for your daily adventures')
 post31.user = jose
-post31.address = jose.address
+post31.address = "5333 Casgrain Ave, Montreal"
 post31.photos.new(remote_source_url: 'https://source.unsplash.com/7VTeOoVXehA/1600x900')
 post31.photos.new(remote_source_url: 'https://source.unsplash.com/zYJ9cVjHyZA/1600x900')
 post31.photos.new(remote_source_url: 'https://source.unsplash.com/799IZNkVopA/1600x900')
@@ -72,7 +72,7 @@ post31.save!
 
 post32 = Post.new(title: 'Hunting knife', price: '83', category: 'outdoor equipment', description: 'a nice knife for your hikes')
 post32.user = jose
-post32.address = jose.address
+post32.address = "1196 Voie Camillien-Houde, Montreal"
 post32.photos.new(remote_source_url: 'https://source.unsplash.com/eSKxTEoef2o/1600x900')
 post32.photos.new(remote_source_url: 'https://source.unsplash.com/-YPxLkfj3Ao/1600x900')
 post32.photos.new(remote_source_url: 'https://source.unsplash.com/l3qJvLhZJg0/1600x900')
@@ -80,28 +80,28 @@ post32.save!
 
 post33 = Post.new(title: 'Big tent', price: '52', category: 'camping gear', description: 'a nice big ass tent')
 post33.user = jose
-post33.address = jose.address
+post33.address = "3000 Chemin de la Cote-Sainte-Catherine, Montreal"
 post33.photos.new(remote_source_url: 'https://source.unsplash.com/D-S-Sy13Z_0/1600x900')
 post33.photos.new(remote_source_url: 'https://source.unsplash.com/V7uP-XzqX18/1600x900')
 post33.save!
 
 post4 = Post.new(title: 'nice tent for up to 3 people', price: '90', category: 'outdoor living', description: 'a tent big enough for two people, very nice')
 post4.user = gustaf
-post4.address = gustaf.address
+post4.address = "405 rue st claude, Montreal"
 post4.photos.new(remote_source_url: 'https://source.unsplash.com/1o41Wy3Z3kc/1600x900')
 post4.photos.new(remote_source_url: 'https://source.unsplash.com/re2LZOB2XvY/1600x900')
 post4.save!
 
-post41 = Post.new(title: 'camping knife', price: '30', category: 'camping gear', description: 'vintage knife perfect for the outdoors')
-post41.user = gustaf
-post41.address = gustaf.address
-post41.photos.new(remote_source_url: 'https://source.unsplash.com/eSKxTEoef2o/1600x900')
-post41.photos.new(remote_source_url: 'https://source.unsplash.com/l3qJvLhZJg0/1600x900')
-post41.save!
+# post41 = Post.new(title: 'camping knife', price: '30', category: 'camping gear', description: 'vintage knife perfect for the outdoors')
+# post41.user = gustaf
+# post41.address = "1595 St Laurent Blvd, Montreal"
+# post41.photos.new(remote_source_url: 'https://source.unsplash.com/eSKxTEoef2o/1600x900')
+# post41.photos.new(remote_source_url: 'https://source.unsplash.com/l3qJvLhZJg0/1600x900')
+# post41.save!
 
 post42 = Post.new(title: 'black knife', price: '24', category: 'outdoor living', description: 'super knife')
 post42.user = gustaf
-post42.address = gustaf.address
+post42.address = "475 Pine Ave W, Montreal"
 post42.photos.new(remote_source_url: 'https://source.unsplash.com/VVjcR09AMrU/1600x900')
 post42.save!
 
