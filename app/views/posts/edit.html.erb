@@ -21,11 +21,15 @@
       <%= f.input :price %>
       <%= f.input :category %>
 
-      <%= f.simple_fields_for :photos do |p, photo| %>
-        <%= cl_image_tag p.object.source, width: 60, height: 60 %>
-        <%= p.input :source %>
-        <%= p.input :source_cache, as: :hidden %>
-      <% end %>
+      <div class="photos-uploader d-flex">
+        <%= f.simple_fields_for :photos do |p, photo| %>
+          <div class="photo-uploader">
+            <%= cl_image_tag p.object.source, width: 60, height: 60, class: "rounded-circle" %>
+            <%= p.input :source, class: "btn btn-outline-success"%>
+            <%= p.input :source_cache, as: :hidden %>
+          </div>
+        <% end %>
+      </div>
 
       <%= f.submit 'Save changes', class: "btn btn-warning button-main" %>
     <% end %>
