@@ -21,8 +21,6 @@
             I love being out in nature, especially kayaking, saling and fishing.</p>
         <br>
         <hr>
-        <p class="text-left"><strong>Stats: </strong><br>
-            <%= booking.user.first_name.capitalize %> has <%= booking.user.posts.count %> listings </p> <br>
             <% if booking.user.rating %>
              <div class="insert-area">Previous renters have said: </p>
               <%= booking.user.rating.times do %>
@@ -33,6 +31,9 @@
               <% end %>
             <% end %>
             </div>
+
+        <p class="text-left"><strong>Stats: </strong><br>
+            <%= booking.user.first_name.capitalize %> has <%= booking.user.posts.count %> listings </p>
 
             <p class=text-left><%= booking.user.bookings.count %> people have renting items from <%= booking.user.first_name.capitalize %> previously</p>
 
