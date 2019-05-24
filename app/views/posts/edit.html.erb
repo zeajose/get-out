@@ -26,9 +26,9 @@
         <%= p.input :source_cache, as: :hidden %>
       <% end %>
 
-      <%= f.submit 'Save changes', class: "btn btn-light border button-main" %>
+      <%= f.submit 'Save changes', class: "btn btn-warning button-main" %>
     <% end %>
+    <%= link_to "Cancel", root_path, class: "btn btn-light border button-main back_button ml-5"%>
 
-    <%= link_to "Cancel", root_path%>
   </div>
 </div>

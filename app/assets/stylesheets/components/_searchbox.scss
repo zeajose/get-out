@@ -20,8 +20,9 @@
         background-repeat: no-repeat;
         background-size: 18px 18px;
         background-position: 95% center;
-        border-radius: 50px;
-        border: 1px solid white;
+        border: 1px solid transparent;
+        border-bottom: 1px solid white;
+        border-radius: 0;
         transition: all 250ms ease-in-out;
         backface-visibility: hidden;
         transform-style: preserve-3d;
@@ -66,8 +67,9 @@
         background-repeat: no-repeat;
         background-size: 18px 18px;
         background-position: 95% center;
-        border-radius: 50px;
-        border: 1px solid black;
+        border: 1px solid transparent;
+        border-bottom: 1px solid black;
+        border-radius: 0;
         transition: all 250ms ease-in-out;
         backface-visibility: hidden;
         transform-style: preserve-3d;
