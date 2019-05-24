@@ -3,10 +3,10 @@
   <img src="<%= post.photos[0].source %>">
   <div class="card-trip-infos">
     <div>
-      <h2><%= post.title %></h2>
-      <p><%= post.description %></p>
+      <h2><%= post.title.capitalize.truncate(15) %></h2>
+      <p><%= post.description.truncate(25) %></p>
     </div>
-    <h2 class="card-trip-pricing"></h2>
+    <h2 class="card-trip-pricing"> $ <%= post.price %></h2>
     <img src='<%= post.user.photo %>' class="card-trip-user avatar-bordered"/>
   </div>
 </div>

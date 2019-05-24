@@ -3,7 +3,7 @@
   <img src="<%= @booking.post.photos[0].source %>">
   <div class="card-trip-infos">
     <div>
-      <h2><%= @booking.post.title  %></h2>
+      <h2><%= @booking.post.title.capitalize %></h2>
       <p><%= @booking.post.description.truncate(25) %></p>
     </div>
     <h2 class="card-trip-pricing"> $ <%= @booking.post.price %></h2>

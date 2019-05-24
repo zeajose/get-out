@@ -34,6 +34,14 @@
   flex-grow: 1;
 }
 
+.cards-s {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+  flex-grow: 1;
+}
+
+
 .main-container {
   display: flex;
   margin: 16px 16px 16px 16px;

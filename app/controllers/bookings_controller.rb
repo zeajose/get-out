@@ -50,16 +50,15 @@ class BookingsController < ApplicationController
     # assigns the current user as the user of the booking
     @booking.user = current_user
 
-    # ASSIGN THE PRICE (Number of days time the price specified in post)
-    @booking.price = (@booking.end_date - @booking.start_date).to_i * @post.price.to_i
-
     # Assign the post to the booking
     @booking.post = @post
 
     if @booking.save
+      @booking.price = (@booking.end_date - @booking.start_date).to_i * @post.price.to_i
+      @booking.save
       redirect_to booking_path(@booking)
     else
-      render :new
+      render 'posts/show'
     end
   end
 

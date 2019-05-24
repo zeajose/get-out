@@ -93,10 +93,15 @@
 
         </i> Paid <br><span style="color:grey; font-size: 12px"> Price: <%= @booking.price %> CAD </span>
                 <% if @booking.user == current_user && @booking.status == 'confirmed' %>
-        <%= link_to payment_path(@booking.id) do %>
-        <button type="button" class="btn btn-primary btn-sm btn-block">Click here to make your payment</button>
-        <% end %>
-        <% end %>
+        <span class="span3 well">
+
+          <a style="color:white "href="#aboutModal" data-toggle="modal" data-target="#myModal"><button type="button" class="btn btn-primary btn-sm btn-block">Make payment</button>
+          </a>
+            <%= render 'shared/payment-popup' %>
+        </span>
+        <!--  -->
+        <%# end %>
+          <% end %>
         </li>
 
         <li class="list-group-item">
