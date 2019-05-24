@@ -23,12 +23,12 @@
                     <hr>
                     <p class="text-left"><strong>Stats: </strong><br>
                         <%= @post.user.first_name.capitalize %> has <%= @post.user.posts.count %> listings </p> <br>
-                        <% if booking.user.rating %>
+                        <% if @post.user.rating %>
              <div class="insert-area">Previous renters have said: </p>
-              <%= @post.user.rating.times do %>
+              <% @post.user.rating.times do %>
                 <span class="fa fa-star checked"></span>
               <% end %>
-              <%= (5 - @post.user.rating).times do %>
+              <% (5 - @post.user.rating).times do %>
                 <span class="fa fa-star"></span>
               <% end %>
             <% end %>

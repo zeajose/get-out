@@ -75,7 +75,6 @@ class BookingsController < ApplicationController
         infoWindow: render_to_string(partial: "infowindow", locals: { post: @post }),
         image_url: helpers.asset_url('pin.png')
       }]
-raise
     end
 
   def edit
