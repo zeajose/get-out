@@ -24,10 +24,10 @@
         <br>
             <% if booking.user.rating %>
              <div class="insert-area">Previous renters have said: </p>
-              <%= booking.user.rating.times do %>
+              <% booking.user.rating.times do %>
                 <span class="fa fa-star checked"></span>
               <% end %>
-              <%= (5 - booking.user.rating).times do %>
+              <% (5 - booking.user.rating).times do %>
                 <span class="fa fa-star"></span>
               <% end %>
             </div>
