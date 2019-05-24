@@ -26,7 +26,9 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_strong_params)
     @post.update(user: current_user)
-    @post.photos.new(source: params['post']['photos_attributes']['0']['source'])
+    params['post']['photos_attributes']['0']['source'].each do |source|
+      @post.photos.new(source: source)
+    end
     if @post.save
       redirect_to post_path(@post.id)
     else
@@ -38,8 +40,15 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @post.update(post_strong_params)
     @post.update(user: current_user)
-    @post.photos.new(source: params['post']['photos_attributes']['0']['source'],
-                       post: @post)
+
+    params['post']['photos_attributes'].each do |index, value|
+      if value.key?(:source)
+        photo = Photo.find(value[:id])
+        photo.source = value[:source]
+        photo.save
+      end
+    end
+
     # @photo = Photo.new(source: params['post']['photos_attributes']['0']['source'],
     #                    post: @post)
     if @post.save!
