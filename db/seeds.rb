@@ -13,10 +13,10 @@ User.destroy_all
 
 puts 'Creating users...'
 
-joe = User.create(first_name: 'joe', email: 'joe@email.com', password: '123456', address: '950 Notre-Dame ouest, montreal', remote_photo_url: "https://kitt.lewagon.com/placeholder/users/jdilillo")
-thomas = User.create(first_name: 'thomas', email: 'thomas@email.com', password: '123456', address: '400 rue de l´inspecteur montreal', remote_photo_url: "https://kitt.lewagon.com/placeholder/users/tomkf")
-jose = User.create(first_name: 'jose', email: 'jose@email.com', password: '123456', address: '9073 d´aillon, montreal', remote_photo_url: "https://kitt.lewagon.com/placeholder/users/zeajose")
-gustaf = User.create(first_name: 'gustaf', email: 'gustaf@email.com', password: '123456', address: '8776 barbeau, montreal', remote_photo_url: "https://kitt.lewagon.com/placeholder/users/gfmar")
+joe = User.create(first_name: 'joe', email: 'joe@email.com', password: '123456', address: '950 Notre-Dame ouest, montreal', remote_photo_url: "https://kitt.lewagon.com/placeholder/users/jdilillo", rating: 1)
+thomas = User.create(first_name: 'thomas', email: 'thomas@email.com', password: '123456', address: '400 rue de l´inspecteur montreal', remote_photo_url: "https://kitt.lewagon.com/placeholder/users/tomkf", rating: 5)
+jose = User.create(first_name: 'jose', email: 'jose@email.com', password: '123456', address: '9073 d´aillon, montreal', remote_photo_url: "https://kitt.lewagon.com/placeholder/users/zeajose", rating: 2)
+gustaf = User.create(first_name: 'gustaf', email: 'gustaf@email.com', password: '123456', address: '8776 barbeau, montreal', remote_photo_url: "https://kitt.lewagon.com/placeholder/users/gfmar", rating: 4)
 
 
 puts 'Creating posts and photos....'
@@ -121,14 +121,14 @@ Booking.create(user: jose, post: post6, start_date: '2019-05-30', end_date: '201
 Booking.create(user: jose, post: post7, start_date: '2019-05-30', end_date: '2019-06-23', price: '154', status: 'picked_up')
 Booking.create(user: jose, post: post8, start_date: '2019-05-30', end_date: '2019-06-23', price: '357', status: 'requested')
 
-Booking.create(user: gustaf, post: post1, start_date: '2019-05-30', end_date: '2019-06-01', price: '1337', status: 'requested', rating: 5)
-Booking.create(user: gustaf, post: post2, start_date: '2019-05-30', end_date: '2019-07-01', price: '17', status: 'confirmed', rating: 3)
-Booking.create(user: gustaf, post: post3, start_date: '2019-05-30', end_date: '2019-09-21', price: '12312', status: 'payed', rating: 2)
-Booking.create(user: gustaf, post: post4, start_date: '2019-05-30', end_date: '2019-06-01', price: '120', status: 'picked_up', rating: 5)
-Booking.create(user: gustaf, post: post5, start_date: '2019-05-30', end_date: '2019-08-11', price: '227', status: 'returned', rating: 4)
-Booking.create(user: gustaf, post: post6, start_date: '2019-05-30', end_date: '2019-06-23', price: '317', status: 'rejected', rating: 3)
-Booking.create(user: gustaf, post: post7, start_date: '2019-05-30', end_date: '2019-06-23', price: '737', status: 'picked_up', rating: 2)
-Booking.create(user: gustaf, post: post8, start_date: '2019-05-30', end_date: '2019-06-23', price: '7', status: 'requested', rating: 1)
+Booking.create(user: gustaf, post: post1, start_date: '2019-05-30', end_date: '2019-06-01', price: '1337', status: 'requested')
+Booking.create(user: gustaf, post: post2, start_date: '2019-05-30', end_date: '2019-07-01', price: '17', status: 'confirmed')
+Booking.create(user: gustaf, post: post3, start_date: '2019-05-30', end_date: '2019-09-21', price: '12312', status: 'payed')
+Booking.create(user: gustaf, post: post4, start_date: '2019-05-30', end_date: '2019-06-01', price: '120', status: 'picked_up')
+Booking.create(user: gustaf, post: post5, start_date: '2019-05-30', end_date: '2019-08-11', price: '227', status: 'returned')
+Booking.create(user: gustaf, post: post6, start_date: '2019-05-30', end_date: '2019-06-23', price: '317', status: 'rejected')
+Booking.create(user: gustaf, post: post7, start_date: '2019-05-30', end_date: '2019-06-23', price: '737', status: 'picked_up')
+Booking.create(user: gustaf, post: post8, start_date: '2019-05-30', end_date: '2019-06-23', price: '7', status: 'requested')
 
 
 # puts 'Finished!'
