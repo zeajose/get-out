@@ -1,24 +1,40 @@
 <%= render 'shared/navbar_search' %>
 <div class="main-container">
-
-  <div class="cards">
+  <div class="cards-s col-8">
     <% @result.each do |post| %>
-      <%= link_to post_path(post.id), class: "card-search", style: "background-image: url(#{post.photos.first.source.url})", method: :get do%>
-          <h4> <%= post.title.capitalize %> </h4>
+
+      <%= link_to post_path(post) do %>
+        <div class="card-trip">
+          <img src="<%= post.photos[0].source %>">
+          <div class="card-trip-infos">
+            <div>
+              <h2><%= post.title.capitalize.truncate(25) %></h2>
+              <p> <%= post.description.capitalize.truncate(25) %></p>
+              <!-- <p> <strong>Pickup:</strong> <%#= booking.start_date %> <strong>Return:</strong> <%#= booking.end_date %></p>
+       -->
+
+
+            </div>
+            <h2 class="card-trip-pricing"><%= post.price %> CAD </h2>
+            <img src="<%= post.user.photo %>" class="card-trip-user avatar-bordered"/>
+          </div>
+        </div>
       <% end %>
+
+
     <% end %>
   </div>
 
-    <div
-    id="map"
-    style="width: 40%;
-    height: 90vh;
-    position: sticky;
-    top: 0;
-    margin: 0 0 0 16px;"
-    data-markers="<%= @markers.to_json %>"
-    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-  class="ml-3"></div>
 
+  <div
+  id="map"
+  style="width: 40%;
+  height: 90vh;
+  position: sticky;
+  top: 0;
+  margin: 0 0 0 16px;"
+  data-markers="<%= @markers.to_json %>"
+  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+  class="ml-3"></div>
 </div>
 </div>
