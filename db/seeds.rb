@@ -124,7 +124,7 @@ post61 = Post.new(title: 'Drone', price: '50', category: 'outdoor equipment', de
 post61.user = thomas
 post61.address = thomas.address
 post61.photos.new(remote_source_url: 'https://source.unsplash.com/mnDGSBiOzwU/1600x900')
-post61.photos.new(remote_source_url: 'lash.com/ZlkRrzJl20Q/1600x900')
+post61.photos.new(remote_source_url: 'https://source.unsplash.com/ZlkRrzJl20Q/1600x900')
 post61.save!
 
 
