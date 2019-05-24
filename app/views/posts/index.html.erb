@@ -4,11 +4,11 @@
 
   <div class="container">
     <h1>Get. <strong>Out.</strong></h1>
-    <p>Bikes, cars, drones, rent anything you want.</p>
+    <p>Bear traps, fishings rods, tents - rent anything you want.</p>
 
     <!-- Search box -->
     <div class="search_container">
-      <%= form_tag(search_posts_path, method: "get") do %>
+      <%= form_tag(search_posts_path, method: "get", html: { autocomplete: "off" }) do %>
         <%= text_field_tag :q, "", class: "search__input", placeholder: "search"%>
         <%#= submit_tag("Search") %>
       <% end %>

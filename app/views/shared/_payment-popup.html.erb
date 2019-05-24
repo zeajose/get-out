@@ -1,0 +1,63 @@
+
+
+
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header justify-content-center">
+                    <h4 class="modal-title text-center'" id="myModalLabel">Make payment for <%= @post.title.capitalize %></h4>
+                </div>
+                <div class="modal-body">
+                    <center>
+                    <img src="<%= @post.photos[0].source  %>" name="aboutme" width="360" height="160" border="0" class="rounded"></a>
+                    <hr>
+                    <center>
+                    <div id="form-container">
+
+                      <div id="card-front">
+                        <div id="image-container">
+                          <span id="amount">Paying: <strong><%= @booking.price %> CAD</strong></span>
+                          <span id="card-image">
+                          </span>
+                        </div>
+                        <!--- end card image container --->
+
+                        <label for="card-number">
+                            Card Number
+                          </label>
+                        <input type="text" id="card-number" placeholder="1234 5678 9101 1112" length="16">
+                        <div id="cardholder-container">
+                          <label for="card-holder">Card Holder
+                          </label>
+                          <input type="text" id="card-holder" placeholder="e.g. John Doe" />
+                        </div>
+                        <!--- end card holder container --->
+                        <div id="exp-container">
+                          <label for="card-exp">
+                              Expiration
+                            </label>
+                          <input id="card-month" type="text" placeholder="MM" length="2">
+                          <input id="card-year" type="text" placeholder="YY" length="2">
+                        </div>
+
+
+                      </div>
+
+                      <!-- <input type="text" id="card-token" /> -->
+
+                    </div>
+
+                    <%= link_to booking_path(@booking, {status: 'payed'}), method: :patch  do%>
+                      <button class="btn btn-primary"> Send payment to <%= @post.user.first_name.capitalize %> </button>
+                    <% end %>
+<!--
+                    </div>
+                    <div class="modal-footer justify-content-center">
+
+                </div> -->
+            </div>
+        </div>
+    </div>
+
+
