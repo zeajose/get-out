@@ -23,12 +23,12 @@
         <hr>
         <p class="text-left"><strong>Stats: </strong><br>
             <%= booking.user.first_name.capitalize %> has <%= booking.user.posts.count %> listings </p> <br>
-            <% if booking.rating %>
+            <% if @rating %>
              <div class="insert-area">Previous renters have said: </p>
-              <%= booking.rating.times do %>
+              <%= rating.times do %>
                 <span class="fa fa-star checked"></span>
               <% end %>
-              <%= (5 - booking.rating).times do %>
+              <%= (5 - @rating).times do %>
                 <span class="fa fa-star"></span>
               <% end %>
             <% end %>
@@ -40,17 +40,6 @@
     </div>
 
 </div>
-
-
-
-<% @booking.rating.to_i == 5 %>
-
-
-
-
-iterable = @booking.rating.to_i
-
-              iterable.times do
 
 
 

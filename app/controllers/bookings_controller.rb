@@ -65,7 +65,9 @@ class BookingsController < ApplicationController
 
   def show
     # Find the booking using the params
+
     @booking = Booking.find(params['id'])
+    @rating = @booking.user.rating
     @post = @booking.post
     @markers =
       [{
@@ -74,8 +76,7 @@ class BookingsController < ApplicationController
         infoWindow: render_to_string(partial: "infowindow", locals: { post: @post }),
         image_url: helpers.asset_url('pin.png')
       }]
-      raise
-  end
+    end
 
   def edit
   end
