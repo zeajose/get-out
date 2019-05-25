@@ -69,7 +69,7 @@
       <!-- categories option -->
 
       <p><b>Categories</b></p>
-      <p class="btn btn-outline-warning"> <%= @post.category %></p>
+      <%= link_to "#{@post.category}", search_posts_path(q: @post.category), class: "btn btn-outline-warning" %>
       <br>
 
       <!-- This is the calendar code -->
@@ -78,11 +78,6 @@
       <%= f.input :end_date, html5: true %>
       <%= f.submit "request", class: "btn btn-warning" %>
       <% end %>
-
-
-
     </div>
-
   </div>
-
 </div>
