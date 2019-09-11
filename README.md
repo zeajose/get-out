@@ -8,6 +8,7 @@ Created as a collaborative project by  <a href="https://github.com/zeajose">Jose
 This full-stack web app was built with Ruby on Rails, HTML/CSS, and Java Script. 
 
 ## ScreenShots
+
 <div>
 HOMEPAGE 
 <img src="public/homepage.png" />
@@ -22,6 +23,7 @@ HOMEPAGE
 
 
 ## Dependencies
+
 -PostgreSQL
 -Rails 5.2.3
 
@@ -33,5 +35,3 @@ To run on your local dev enviroment:
 3. Run command 'yarn install'
 4. Create local db with command 'rails db:create db:migrate'
 5. Run the server with command 'rails s' and visit http://localhost:3000/ in your browser.
-
-Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates).
