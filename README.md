@@ -1,11 +1,14 @@
-# GET OUT:
-https://get-out-bnbapp.herokuapp.com/
+# GET OUT
 
-Get Out is an online market place, allowing users to rent outdoor sporting equipment. The app functions as a mock-up at this stage but integration with Stripe is possible.   
+An online market place, allowing users to rent outdoor sporting equipment. The app functions as a mock-up at this stage but integration with Stripe is possible.   
 
 Created as a collaborative project by  <a href="https://github.com/zeajose">Jose Zea</a>, <a href="https://github.com/tomkf">Thomas Ferris</a>, <a href="https://github.com/gfmar">Gustaf Folkmar</a>, and <a href="https://github.com/jdilillo">Joe Di Lillo</a>
 
 This full-stack web app was built with Ruby on Rails, HTML/CSS, and Java Script. 
+
+## Live demo
+
+https://get-out-bnbapp.herokuapp.com/
 
 ## ScreenShots
 
@@ -19,7 +22,6 @@ HOMEPAGE
 - PRODUCT PAGE:
 !["PRODUCT Page: "](https://raw.githubusercontent.com/tomkf/get-out/master/public/Screen%20Shot%202019-05-27%20at%202.24.01%20PM.png)
 <div>
-
 
 
 ## Dependencies
