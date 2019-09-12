@@ -20,6 +20,7 @@ gem 'carrierwave', '~> 1.2'
 
 gem 'bootsnap', require: false
 gem 'devise'
+gem "nokogiri", ">= 1.10.4"
 gem 'jbuilder', '~> 2.0'
 gem 'pg', '~> 0.21'
 gem 'puma'
