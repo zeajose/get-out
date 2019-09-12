@@ -13,13 +13,19 @@ https://get-out-bnbapp.herokuapp.com/
 ## ScreenShots
 
 <div>
-HOMEPAGE
-<img src="public/homepage.png" />
+Homepage
+<img src="public/screenshots/home.png" />
  
-BOOKING PAGE:
+Map
+<img src="public/screenshots/map.png" />
+
+Product
+<img src="public/screenshots/product.png" />
+ 
+Booking:
 !["Booking Page: "](https://raw.githubusercontent.com/tomkf/get-out/master/public/Screen%20Shot%202019-05-27%20at%201.46.38%20PM.png)
 
-PRODUCT PAGE:
+Product page:
 !["PRODUCT Page: "](https://raw.githubusercontent.com/tomkf/get-out/master/public/Screen%20Shot%202019-05-27%20at%202.24.01%20PM.png)
 <div>
 
