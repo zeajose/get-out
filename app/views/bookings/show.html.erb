@@ -35,7 +35,7 @@
     </div>
   </div>
 
-  <div class="d-flex flex-row container mt-3">
+  <div class="d-flex flex-row container mt-3 mb-5">
 
     <div style="width: 25rem">
       <%=  render 'shared/profile-static' %>
@@ -91,7 +91,7 @@
             <i class="far fa-times-circle" style="color: grey">
           <% end %>
 
-        </i> Paid <br><span style="color:grey; font-size: 12px"> Price: <%= @booking.price %> CAD </span>
+        </i> Paid <br><span style="color:grey; font-size: 12px"> Price: $<%= @booking.price %></span>
                 <% if @booking.user == current_user && @booking.status == 'confirmed' %>
         <span class="span3 well">
 
@@ -222,7 +222,7 @@
             <i class="far fa-times-circle" style="color: grey">
           <% end %>
 
-        </i> Paid <br><span style="color:grey; font-size: 12px"> Price: <%= @booking.price %> CAD </span>
+        </i> Paid <br><span style="color:grey; font-size: 12px"> Price: $<%= @booking.price %></span>
                 <% if @booking.user == current_user && @booking.status == 'confirmed' %>
         <%= link_to payment_path(@booking.id) do %>
         <button type="button" class="btn btn-primary btn-sm btn-block">Click here to make your payment</button>

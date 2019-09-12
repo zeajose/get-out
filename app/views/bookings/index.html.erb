@@ -157,6 +157,20 @@
                 I love being out in nature, especially kayaking, saling and fishing.</p>
             <br>
             <hr>
+            <br>
+
+            <% if current_user.rating %>
+             <div class="insert-area">Previous renters have said: </p>
+              <% current_user.rating.times do %>
+                <span class="fa fa-star checked"></span>
+              <% end %>
+              <% (5 - current_user.rating).times do %>
+                <span class="fa fa-star"></span>
+              <% end %>
+            </div>
+            <% end %>
+            <br>
+
             <p class="text-left"><strong>Stats: </strong><br>
                 <%= current_user.first_name.capitalize %> has <%= current_user.posts.count %> listings </p> <br>
                 <p class=text-left><%= current_user.bookings.count %> people have renting items from <%= current_user.first_name.capitalize %> previously</p>

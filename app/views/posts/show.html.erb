@@ -8,16 +8,18 @@
     <div class="card-trip col-8 p-0">
       <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="10000">
         <ol class="carousel-indicators">
-          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+          <% @post.photos.each_with_index do |photo, i| %>
+            <% if i.zero? %>
+              <li data-target="#carouselExampleIndicators" data-slide-to="<%= i %>" class="active"></li>
+            <% else %>
+              <li data-target="#carouselExampleIndicators" data-slide-to="<%= i %>"></li>
+            <% end %>
+          <% end %>
         </ol>
         <div class="carousel-inner">
           <% @post.photos.each do |photo| %>
-            <div class="carousel-item <%= "active" if @post.photos.first == photo %>">
-
-              <img src="<%= photo.source.url %>" class="d-block h-100" style="background-size: cover; background-position: center; max-height: 500px;">
-
+            <div class="carousel-item <%= 'active' if @post.photos.first == photo %>">
+              <img src="<%= photo.source.url %>" class="d-block w-100">
             </div>
           <% end %>
 
@@ -34,10 +36,10 @@
 
       <div class="card-trip-infos">
         <div>
-          <%= link_to "Update", edit_post_path(@post), class: "btn btn-light border button-main"%>
-
+          <% if @post.user == current_user %>
+            <%= link_to "Update", edit_post_path(@post), class: "btn btn-light border button-main"%>
+          <% end %>
         </div>
-        <h2 class="card-trip-pricing"> $ <%= @post.price  %></h2>
 
 <!--
         <img src="<%#= @post.user.photo %>" class="card-trip-user avatar-bordered"/>
@@ -56,7 +58,7 @@
     <div class="col-4 p-4 " style="background-color: white">
       <span class="span3 well">
         <a href="#aboutModal" data-toggle="modal" data-target="#myModal">
-          <h2> $<%= @post.price %> per day </h2>
+          <h2> $<%= @post.price %> a day </h2>
           <p> <b> <%= @post.user.first_name.capitalize %></b> </p>
           <p> Address: <%= @post.address %> </p>
           <p>Description: <%= @post.description %></p>
@@ -67,7 +69,7 @@
       <!-- categories option -->
 
       <p><b>Categories</b></p>
-      <p class="btn btn-outline-warning"> <%= @post.category %></p>
+      <%= link_to "#{@post.category}", search_posts_path(q: @post.category), class: "btn btn-outline-warning" %>
       <br>
 
       <!-- This is the calendar code -->
@@ -76,11 +78,6 @@
       <%= f.input :end_date, html5: true %>
       <%= f.submit "request", class: "btn btn-warning" %>
       <% end %>
-
-
-
     </div>
-
   </div>
-
 </div>
