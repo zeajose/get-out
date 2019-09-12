@@ -23,10 +23,8 @@ Product
 <img src="public/screenshots/product.png" />
  
 Booking:
-!["Booking Page: "](https://raw.githubusercontent.com/tomkf/get-out/master/public/Screen%20Shot%202019-05-27%20at%201.46.38%20PM.png)
+<img src="public/screenshots/booking.png" />
 
-Product page:
-!["PRODUCT Page: "](https://raw.githubusercontent.com/tomkf/get-out/master/public/Screen%20Shot%202019-05-27%20at%202.24.01%20PM.png)
 <div>
 
 
