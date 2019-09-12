@@ -8,7 +8,7 @@ This full-stack web app was built with Ruby on Rails, HTML/CSS, and Java Script.
 
 ## Live demo
 
-https://get-out-bnbapp.herokuapp.com/
+https://get-out-bnbapp.herokuapp.com/ (give it a few second to load)
 
 ## ScreenShots
 
