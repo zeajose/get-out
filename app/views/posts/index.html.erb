@@ -10,7 +10,6 @@
     <div class="search_container">
       <%= form_tag(search_posts_path, method: "get", html: { autocomplete: "off" }) do %>
         <%= text_field_tag :q, "", class: "search__input", placeholder: "search"%>
-        <%#= submit_tag("Search") %>
       <% end %>
     </div>
     <!--  -->
